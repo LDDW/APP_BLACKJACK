@@ -7,10 +7,6 @@ class UsersController {
 
 	}
 
-	public create() {
-
-	}
-
 	public update() {
 
 	}

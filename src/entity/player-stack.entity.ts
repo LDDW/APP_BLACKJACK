@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
 
 import { Game } from "./game.entity"
-import { Users } from "./users.entity"
+import { User } from "./user.entity"
 
 @Entity()
 export class PlayerStack {
@@ -15,7 +15,7 @@ export class PlayerStack {
     game: Game
     id_game: number
 
-    @OneToMany(() => Users, (users) => users.id)
-    users: Users
+    @OneToMany(() => User, (user) => user.id)
+    users: User
     id_player: number
 }

@@ -2,8 +2,9 @@
  * Commenter vos méthodes
  */
 import {User} from "../entity/User";
-import {hash} from "bcrypt";
+import {hash, compare} from "bcrypt";
 import { AppDataSource } from "../data-source";
+import {sign} from "jsonwebtoken";
 
 class AuthController {
 
@@ -13,34 +14,58 @@ class AuthController {
 	constructor() {
 
 	}
-
 	public signup(req, res, next) {
-
 		const UserRepository = AppDataSource.getRepository(User);
-		if (!UserRepository.findOneBy({email : req.body.email })){
-			hash(req.body.password, 10)
-				.then(hash => {
-					const user = new User()
-					user.email = req.body.email
-					user.password = hash
-					user.pseudo = req.body.pseudo
-					user.avatar = (req.body.avatar) ? req.body.avatar : null
-					AppDataSource.manager.save(user)
-						.then(()=> res.status(201).json({ message: 'Utilisateur créé' }))
-						.catch(error => res.status(400).json({ error }));
-				})
-				.catch(error => res.status(500).json({ error }));
-		}else{
-			return res.status(400);
-		}
-		console.log("test");
+		UserRepository.findOneBy({email : req.body.email})
+			.then(user => {
+		 		if(user){
+					 return res.status(401).json({error: "Email déjà utilisée"})
+		 		}
+				 hash(req.body.password, 10)
+					 .then(hash => {
+						const user = new User;
+						user.email = req.body.email
+						user.password = hash
+						user.pseudo = req.body.pseudo
+						user.avatar = (req.body.avatar) ? req.body.avatar : ""
+
+						AppDataSource.manager.save(user)
+							.then(()=> res.status(201).json({message: "Utilisateur créé"}))
+							.catch(error => res.status(400).json({error}))
+					})
+					.catch(error => res.status(500).json({error}));
+			})
+			.catch(error => res.status(500).json({error}));
 	}
 
-	public login() {
-
+	public login(req, res, next) {
+		const UserRepository = AppDataSource.getRepository(User);
+		UserRepository.findOneBy({email : req.body.email})
+			.then(user => {
+				if(!user){
+					return res.status(401).json({error: "Utilisateur non trouvé"})
+				}
+				compare(req.body.password, user.password)
+					.then(valid => {
+						if (!valid) {
+							return res.status(401).json({error: "Mot de passe incorect"});
+						}
+						res.status(200).json({
+							userId: user.id,
+							token: sign(
+								{userId: user.id},
+								'AZERTY',
+								{ expiresIn: '24h'}
+							)
+						});
+					})
+					.catch(error => res.status(500).json({error}));
+			})
+			.catch(error => res.status(500).json({error}));
 	}
 
-	// ...
+	public test(req, res, next){
+		return res.status(201).json({message: "authentification réussi"})
+	}
 }
-
 export default new AuthController()

@@ -9,7 +9,14 @@
     "start:web": "node dist/server.js",
     "start:rest": "node dist/server.api.js",
     "pm2:start": "pm2 start npm --name \"blackjack\" -- start --watch",
-    "pm2:stop": "pm2 stop blackjack"
+    "pm2:stop": "pm2 stop blackjack",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "entity:create": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm entity:create -n",
+    "migrate:generate": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:generate -n",
+    "migrate:run": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
+    "migrate:revert": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert",
+    "schema:drop": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm schema:drop"
+
   },
   "keywords": [],
   "author": "",

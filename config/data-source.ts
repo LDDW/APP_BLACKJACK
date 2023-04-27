@@ -1,4 +1,4 @@
-import "reflect-metadata"
+// import "reflect-metadata"
 import { DataSource } from "typeorm"
 
 export const myDataSource = new DataSource({
@@ -8,8 +8,8 @@ export const myDataSource = new DataSource({
     username: "blackjack_user",
     password: "blackjack_pass",
     database: "blackjack",
-    entities: ["src/**/*.entity.js"],
-    migrations: ["src/migrations/*.js"],
+    entities: ["../dist/src/entity/*"],
+    migrations: ["../dist/src/migration/*"],
     migrationsTableName: "migration_table",
     logging: true,
     synchronize: true,

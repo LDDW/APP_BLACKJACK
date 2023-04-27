@@ -28,6 +28,8 @@ server.api.ts : Serveur API -> port 3333
 ### Installation TypeORM
 
 ```
+npm install -g typescript
+
 npm install typeorm --save
 npm install reflect-metadata --save
 npm install @types/node --save-dev
@@ -48,15 +50,11 @@ FLUSH PRIVILEGES;
 ```
 
 ```
-typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create
+typeorm-extension db:create -d dist/config/data-source.js OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/config/data-source.js 
 
+typeorm migration:generate <MigrationName> -d dist/config/data-source.js                                                                  [git:database] ✖  
+typeorm migration:run -d dist/config/data-source.js
 
-typeorm migration:create ./path-to-migrations-dir/PostRefactoring
-typeorm migration:run
-typeorm migration:generate -n <MigrationName>
-
-npm install -g typescript
-tsc
 ```
 
 ### How to use

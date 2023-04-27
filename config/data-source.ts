@@ -8,9 +8,9 @@ export const myDataSource = new DataSource({
     username: "blackjack_user",
     password: "blackjack_pass",
     database: "blackjack",
-    entities: ["../dist/src/entity/*"],
-    migrations: ["../dist/src/migration/*"],
+    entities: ["dist/src/entity/*"],
+    migrations: ["dist/src/migration/*"],
     migrationsTableName: "migration_table",
     logging: true,
-    synchronize: true,
+    synchronize: false,
 })

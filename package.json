@@ -10,13 +10,19 @@
     "start:rest": "node dist/server.api.js",
     "pm2:start": "pm2 start npm --name \"blackjack\" -- start --watch",
     "pm2:stop": "pm2 stop blackjack",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "entity:create": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm entity:create -n",
-    "migrate:generate": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:generate -n",
-    "migrate:run": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
-    "migrate:revert": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert",
-    "schema:drop": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm schema:drop"
-
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm:run": "npm run typeorm -- migration:run",
+    "typeorm:revert": "npm run typeorm -- migration:revert",
+    "typeorm:generate": "npm run typeorm -- migration:generate",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+  },
+  "tsconfig-paths": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/migration/"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
@@ -39,6 +45,7 @@
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
     "pm2": "^5.3.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.3"
   }
 }

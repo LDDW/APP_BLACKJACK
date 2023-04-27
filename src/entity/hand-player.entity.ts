@@ -15,9 +15,7 @@ export class HandPlayer {
 
     @OneToMany(() => PlayerStack, (playerStack) => playerStack.id)
     playerStack: PlayerStack
-    id_stack: number
 
     @OneToMany(() => GameRound, (gameRound) => gameRound.id)
     gameRound: GameRound
-    id_gameround: number
 }

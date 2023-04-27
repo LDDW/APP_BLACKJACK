@@ -14,5 +14,4 @@ export class HandSplit {
 
     @ManyToOne(() => HandPlayer, (handPlayer) => handPlayer.id)
     handPlayer: HandPlayer
-    id_handplayer: number
 }

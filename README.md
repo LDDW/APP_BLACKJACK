@@ -52,7 +52,7 @@ FLUSH PRIVILEGES;
 ```
 typeorm-extension db:create -d dist/config/data-source.js OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/config/data-source.js 
 
-typeorm migration:generate <MigrationName> -d dist/config/data-source.js                                                                  [git:database] ✖  
+typeorm migration:generate <MigrationName> -d dist/config/data-source.js
 typeorm migration:run -d dist/config/data-source.js
 
 ```

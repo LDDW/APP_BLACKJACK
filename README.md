@@ -24,7 +24,8 @@ server.api.ts : Serveur API -> port 3333
 
 ## DATABASE MODULE
 
-### Installation
+
+### Installation TypeORM
 
 ```
 npm install typeorm --save
@@ -32,11 +33,23 @@ npm install reflect-metadata --save
 npm install @types/node --save-dev
 npm install mysql2 --save
 npm install @types/es6-shim
+npm install typeorm-extension
 
 npm install ts-node --save
-npm install -g ts-node
+npm install ts-node -g
+```
+### Init Database
 
-npx typeorm init --name database --database mysql
++ Créer l'utilisateur 'blackjack_user' utilisé par la database
+```
+CREATE USER 'blackjack_user' IDENTIFIED BY 'blackjack_pass';
+GRANT ALL PRIVILEGES ON 'blackjack' . * TO 'blackjack_user'@'%';
+FLUSH PRIVILEGES;
+```
+
+```
+typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create
+
 
 typeorm migration:create ./path-to-migrations-dir/PostRefactoring
 typeorm migration:run

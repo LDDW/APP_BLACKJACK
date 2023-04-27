@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne} from "typeorm"
 import { PlayerStack } from "./player-stack.entity"
 import { GameRound } from "./game-round.entity"
 
@@ -13,9 +13,9 @@ export class HandPlayer {
     @Column()
     bet: number
 
-    @OneToMany(() => PlayerStack, (playerStack) => playerStack.id)
+    @ManyToOne(() => PlayerStack, (playerStack) => playerStack.id)
     playerStack: PlayerStack
 
-    @OneToMany(() => GameRound, (gameRound) => gameRound.id)
+    @ManyToOne(() => GameRound, (gameRound) => gameRound.id)
     gameRound: GameRound
 }

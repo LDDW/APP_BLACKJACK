@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-import { UserChannel } from "./user-channel.entity";
 
 @Entity()
 export class User {
@@ -18,7 +17,4 @@ export class User {
 
     @Column()
     avatar: string
-
-    @OneToMany(() => UserChannel, userChannel => userChannel.user)
-    userChannels: UserChannel[];
 }

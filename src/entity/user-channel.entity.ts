@@ -1,17 +1,19 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, PrimaryColumn} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, PrimaryColumn, OneToMany} from "typeorm";
 import { User } from "./user.entity";
 import { Channel } from "./channel.entity";
 
 @Entity()
 export class UserChannel {
     @PrimaryColumn()
-    @ManyToOne(() => User, user => user.userChannels)
-    @JoinColumn({ name: "id_player" })
+    userId: number;
+
+    @ManyToOne(() => User, user => user.id )
     user: User;
 
     @PrimaryColumn()
-    @ManyToOne(() => Channel, channel => channel.userChannels)
-    @JoinColumn({ name: "id_channel" })
+    channelId: number;
+
+    @ManyToOne(() => Channel, channel => channel.id)
     channel: Channel;
 
     @Column()

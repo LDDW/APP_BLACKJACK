@@ -24,10 +24,11 @@ io.on("connection", (socket) => {
     //ajouter la room dans le tableau si elle n'existe pas
     if (!availableRooms.includes(roomId)) {
       availableRooms.push(roomId);
+      //envoi des rooms au frontend
+      io.emit("displayRooms",availableRooms);
     }
-    console.log("availableRooms");
-    console.log(availableRooms);
-    console.log("availableRooms");
+   
+    
 
     // Envoyer un message à tous les clients dans la salle (sauf l'utilisateur actuel)
     socket
@@ -70,35 +71,3 @@ io.on("connection", (socket) => {
 
 
 
-
-// let socketsConected = new Set();
-// io.on("connection", onConnected);
-
-// function onConnected(socket) { 
-
-//   console.log("Socket connected", socket.id);
-
-
-// }
-
-
-
-// // Join / create room
-// function joinRoom(roomId,socket) {
-//   socket.join(roomId);
-// }
-// // Leave room
-
-
-// // Leave room when player disconnect 
-// function sendToFrontPlayers(data,nom) {
-//   io.emit(nom, data);
-// }
-
-// function sendToFrontPlayer(data,nom,socket) {
-//   socket.emit(nom, data);
-// }
-
-// function sendToRoom(roomId,nom,data) {
-//   io.to(roomId).emit(nom, data);
-// }

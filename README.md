@@ -43,7 +43,7 @@ npm install ts-node -g
 + Créer l'utilisateur 'blackjack_user' utilisé par la database
 ```
 CREATE USER 'blackjack_user' IDENTIFIED BY 'blackjack_pass';
-GRANT ALL PRIVILEGES ON 'blackjack' . * TO 'blackjack_user'@'%';
+GRANT ALL PRIVILEGES ON blackjack . * TO 'blackjack_user'@'%';
 FLUSH PRIVILEGES;
 ```
 

@@ -17,8 +17,8 @@ const httpWebServer = createServer(app);
 /**
  * Déclaration des middlewares
  */
-app.use(bodyParser.json());
 app.use(cors(corsConfig));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static('public'));

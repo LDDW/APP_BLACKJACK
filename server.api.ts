@@ -6,6 +6,8 @@ import { socketConfig } from './config/socket';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { corsConfig } from './config/cors';
+import usersRouter from './routes/users.route';
+import apiRouter from './routes/api.route';
 
 /**
  * Serveur web 3333 -> React
@@ -26,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
  */
 const io = new Server(httpRestServer, socketConfig);
 
+app.use('/api', apiRouter);
 
 
 httpRestServer.listen(portRestServer, () => {

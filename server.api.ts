@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /**
  * Socket.io
  */
-const io = new Server(httpRestServer, socketConfig);
+export const io = new Server(httpRestServer, socketConfig);
 
 
 

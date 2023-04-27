@@ -15,6 +15,7 @@ class AuthController {
 	}
 
 	public signup(req, res, next) {
+
 		const UserRepository = AppDataSource.getRepository(User);
 		if (!UserRepository.findOneBy({email : req.body.email })){
 			hash(req.body.password, 10)
@@ -32,6 +33,7 @@ class AuthController {
 		}else{
 			return res.status(400);
 		}
+		console.log("test");
 	}
 
 	public login() {

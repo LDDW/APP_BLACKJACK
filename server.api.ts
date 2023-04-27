@@ -8,6 +8,8 @@ import cors from 'cors';
 import { corsConfig } from './config/cors';
 import usersRouter from './routes/users.route';
 import apiRouter from './routes/api.route';
+import authRoute from "./routes/auth.route";
+import authRouter from "./routes/auth.route";
 
 /**
  * Serveur web 3333 -> React
@@ -28,8 +30,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
  */
 const io = new Server(httpRestServer, socketConfig);
 
+/**
+ * Déclaration des routes avec préfix
+ */
 app.use('/api', apiRouter);
-
+app.use('/user', usersRouter);
+app.use('/auth', authRouter);
 
 httpRestServer.listen(portRestServer, () => {
 	console.log('listener on http://127.0.0.1:'+portRestServer);

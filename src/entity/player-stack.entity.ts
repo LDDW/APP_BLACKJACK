@@ -17,5 +17,4 @@ export class PlayerStack {
 
     @OneToMany(() => User, (user) => user.id)
     users: User
-    id_player: number
 }

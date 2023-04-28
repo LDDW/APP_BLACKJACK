@@ -53,7 +53,7 @@ FLUSH PRIVILEGES;
 + Créer la database 'blackjack'
 
 ```
-typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/config/data-source.js 
+typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/data-source.js 
 ```
 
 ### Commandes TypeORM

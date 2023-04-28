@@ -11,9 +11,9 @@
     "pm2:start": "pm2 start npm --name \"blackjack\" -- start --watch",
     "pm2:stop": "pm2 stop blackjack",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "typeorm:run": "npm run typeorm -- migration:run",
+    "typeorm:run": "npm run typeorm -- migration:run -d dist/data-source.js",
     "typeorm:revert": "npm run typeorm -- migration:revert",
-    "typeorm:generate": "npm run typeorm -- migration:generate",
+    "typeorm:generate": "npm run typeorm -- migration:generate -d dist/data-source.js",
     "start": "ts-node -r tsconfig-paths/register src/index.ts"
   },
   "tsconfig-paths": {

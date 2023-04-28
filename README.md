@@ -24,7 +24,6 @@ server.api.ts : Serveur API -> port 3333
 
 ## DATABASE MODULE
 
-
 ### Installation TypeORM
 
 ```
@@ -40,21 +39,32 @@ npm install typeorm-extension
 npm install ts-node --save
 npm install ts-node -g
 ```
+
 ### Init Database
 
 + Créer l'utilisateur 'blackjack_user' utilisé par la database
+
 ```
 CREATE USER 'blackjack_user' IDENTIFIED BY 'blackjack_pass';
 GRANT ALL PRIVILEGES ON blackjack . * TO 'blackjack_user'@'%';
 FLUSH PRIVILEGES;
 ```
 
++ Créer la database 'blackjack'
+
 ```
-typeorm-extension db:create -d dist/config/data-source.js OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/config/data-source.js 
+typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli/index.js db:create -d dist/config/data-source.js 
+```
 
-typeorm migration:generate <MigrationName> -d dist/config/data-source.js
-typeorm migration:run -d dist/config/data-source.js
+### Commandes TypeORM
 
++ Générer une migration
+```
+npm run typeorm:generate <MigrationName>  
+```
++ Lancer les migrations
+```
+npm run typeorm:run
 ```
 
 ### How to use

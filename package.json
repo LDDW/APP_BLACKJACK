@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
+    "dev-rest": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.api.js\"",
     "build": "npx tsc",
     "start:web": "node dist/server.js",
     "start:rest": "node dist/server.api.js",

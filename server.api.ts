@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const io = new Server(httpRestServer, socketConfig);
 
 app.use('/api', apiRouter);
-
+app.use('/user', usersRouter);
 
 httpRestServer.listen(portRestServer, () => {
 	console.log('listener on http://127.0.0.1:'+portRestServer);

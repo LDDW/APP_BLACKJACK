@@ -4,26 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    /* "dev": Compilation et lancement du serveur React + watch des modifs  */
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
-    "dev-rest": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.api.js\"",
+    /* "build": Compilation de tous les fichiers .ts dans le /dist */
     "build": "npx tsc",
+    /* "start:web": Lancement du serveur front */
     "start:web": "node dist/server.js",
+    /* "start:rest": Lancement du serveur back */
     "start:rest": "node dist/server.api.js",
+    /* "pm2:start": Lancement du serveur back avec pm2 + watch */
     "pm2:start": "pm2 start npm --name \"blackjack\" -- start --watch",
-    "pm2:stop": "pm2 stop blackjack",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "typeorm:run": "npm run typeorm -- migration:run -d dist/data-source.js",
-    "typeorm:revert": "npm run typeorm -- migration:revert",
-    "typeorm:generate": "npm run typeorm -- migration:generate -d dist/data-source.js",
-    "start": "ts-node -r tsconfig-paths/register src/index.ts"
-  },
-  "tsconfig-paths": {
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "src/migration/"
-      ]
-    }
+    /*  "pm2:stop": Arrêt du serveur back */
+    "pm2:stop": "pm2 stop blackjack"
   },
   "keywords": [],
   "author": "",
@@ -33,20 +25,14 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mysql2": "^3.2.4",
-    "reflect-metadata": "^0.1.13",
-    "socket.io": "^4.6.1",
-    "ts-node": "^10.9.1",
-    "typeorm": "^0.3.15",
-    "typeorm-extension": "^2.7.0"
+    "socket.io": "^4.6.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "@types/node": "^18.16.1",
+    "@types/node": "^18.15.11",
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
     "pm2": "^5.3.0",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.3"
   }
 }

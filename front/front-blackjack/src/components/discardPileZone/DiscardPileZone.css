@@ -1,0 +1,11 @@
+.discard-pile-zone {
+    background-color: #777;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .card-area {
+    /* Styles for displaying the discard pile cards */
+  }
+  

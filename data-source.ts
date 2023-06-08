@@ -26,10 +26,3 @@ export const myDataSource = new DataSource({
     logging: true,
     synchronize: true,
 })
-
-myDataSource.initialize().then(() => {
-    console.log("Connection to database established")
-})
-    .catch((err) => {
-        console.log("Connection to database failed", err)
-    });

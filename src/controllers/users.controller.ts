@@ -9,14 +9,8 @@ class UsersController {
 
 	}
 
+	public create() {
 
-	public create(email: string, password: string, username: string, avatar: string) {
-		const user = new User();
-		user.email = email;
-		user.password = password; //TODO : hash password
-		user.username = username;
-		user.avatar = avatar;
-		return myDataSource.manager.save(user);
 	}
 
 	public update() {

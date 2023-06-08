@@ -19,7 +19,7 @@ export class User {
     @Column()
     avatar: string
 
-    @Column()
+    @Column({ default: '["ROLE_USER"]' })
     roles: string
 
     @OneToMany(() => GamePlayer, gamePlayer => gamePlayer.user)

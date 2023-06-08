@@ -1,14 +1,7 @@
 import React from "react";
 
-class AdminDashboard extends React.Component {
-
-    render() {
-        return (
-            <div id="dashboard">
-                Dashboard Admin
-            </div>
-        )
-    }
-}
+const AdminDashboard = () => {
+  return <div>Bienvenue sur l'administration</div>;
+};
 
 export default AdminDashboard;

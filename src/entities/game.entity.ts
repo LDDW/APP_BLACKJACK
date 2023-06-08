@@ -4,6 +4,7 @@ import {userRepository} from "../repository/user.repository";
 import * as console from "console";
 import {myDataSource} from "../../data-source";
 
+
 @Entity()
 export class Game {
     @PrimaryGeneratedColumn()
@@ -59,8 +60,8 @@ export class Game {
 
     // Crée le jeu de cartes
     createShoe(nbDecks) {
-        // const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const suits = ['♥️', '♦️', '♣️', '♠️'];
+        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+        //const suits = ['♥️', '♦️', '♣️', '♠️'];
         const values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
         const deck = [];
         const shoe = [];
@@ -107,6 +108,7 @@ export class Game {
 
         // Et l'ajoute à la liste des joueurs
         this.players.push(player);
+        this.nb_players = this.players.length();
 
         // TEST
         // console.log(player["id"] + " vient de s'assoir à la table");
@@ -118,6 +120,7 @@ export class Game {
     startGame() {
         this.dealInitialCards();
         this.currentPlayerIndex = 0;
+        this.date_begin = new Date();
     }
 
     // Distribue les cartes initiales
@@ -229,7 +232,7 @@ export class Game {
             } else {
                 winner = 'push';
                 // TEST
-                text += " "+player.id;
+                //text += " "+player.id;
                 // ENDTEST
             }
 
@@ -238,7 +241,7 @@ export class Game {
             if (winner === 'player') {
                 result = player.bet * 1.5;
                 // TEST
-                text += " "+player.id;
+                //text += " "+player.id;
                 // ENDTEST
             } else if (winner === 'push') {
                 result = player.bet;

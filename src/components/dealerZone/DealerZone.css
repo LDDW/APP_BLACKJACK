@@ -1,15 +1,39 @@
-.dealer-zone {
-    background-color: #555;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .card-area {
-    /* Styles for displaying dealer's cards */
-  }
-  
-  .additional-cards {
-    /* Styles for displaying additional cards drawn from the shoe */
-  }
-  
+.dealerZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
+
+.dealerIcon {
+  width: 100px; 
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dealerCards {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  width: 40px; 
+  height: auto;
+}
+
+.deck {
+  text-align: right;
+  position: absolute;
+  right: 100px;
+}

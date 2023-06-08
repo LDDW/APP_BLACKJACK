@@ -1,6 +1,6 @@
 import express from 'express';
 const apiRouter = express.Router();
 
-apiRouter.get('/')
+apiRouter.get('/');
 
-export default apiRouter
+export default apiRouter;

@@ -3,6 +3,7 @@
  */
 import {User} from "../entities/user.entity";
 import {myDataSource} from "../../data-source";
+import {sign} from "jsonwebtoken";
 
 class UsersController {
 	constructor() {
@@ -17,6 +18,9 @@ class UsersController {
 
 	}
 
+	public test(req, res, next) {
+		return res.status(201).json({msg: "OK"})
+	}
 	// ...
 }
 

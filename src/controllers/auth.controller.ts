@@ -19,7 +19,7 @@ class AuthController {
 		UserRepository.findOneBy({email : req.body.email})
 			.then(user => {
 		 		if(user){
-					 return res.status(401).json({error: "Email déjà utilisée"})
+					 return res.status(401).json({error: "Erreur Paramètres"})
 		 		}
 				 hash(req.body.password, 10)
 					 .then(hash => {

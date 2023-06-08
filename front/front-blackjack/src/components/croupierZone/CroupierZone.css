@@ -1,0 +1,15 @@
+.croupier-zone {
+    background-color: #555;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .card-area {
+    /* Styles for displaying dealer's cards */
+  }
+  
+  .additional-cards {
+    /* Styles for displaying additional cards drawn from the shoe */
+  }
+  

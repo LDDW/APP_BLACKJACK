@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CroupierZone from './components/croupierZone/CroupierZone';
-import PlayerZone from './components/playerZone/PlayerZone';
-import ShoeZone from './components/shoeZone/ShoeZone';
-import DiscardPileZone from './components/discardPileZone/DiscardPileZOne';
-import ChipZone from './components/chipZone/ChipZone';
-import RuleZone from './components/ruleZone/RuleZone';
+
+import CroupierZone from "../croupierZone/CroupierZone";
+import ShoeZone from "../shoeZone/ShoeZone";
+import DiscardPileZone from "../discardPileZone/DiscardPileZOne";
+import ChipZone from "../chipZone/ChipZone";
+import RuleZone from "../ruleZone/RuleZone";
 
 const Game = () => {
     return(

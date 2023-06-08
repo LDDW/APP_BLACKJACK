@@ -1,1 +1,0 @@
-Rule Commit GitHub : {name} : {reason push}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="src/components#">
         Navbar
       </a>
       <button
@@ -34,7 +34,7 @@ const Header = () => {
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
-              href="#"
+              href="src/components#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -44,20 +44,20 @@ const Header = () => {
               Dropdown
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="src/components#">
                 Action
               </a>
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="src/components#">
                 Another action
               </a>
               <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href="src/components#">
                 Something else here
               </a>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link disabled" href="#">
+            <a className="nav-link disabled" href="src/components#">
               Disabled
             </a>
           </li>

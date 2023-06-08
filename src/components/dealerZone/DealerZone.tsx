@@ -1,9 +1,9 @@
 import React from 'react';
-import './CroupierZone.css';
+import './DealerZone.css';
 
-const CroupierZone = () => {
+const DealerZone = () => {
   return (
-    <div className="croupier-zone">
+    <div className="dealer-zone">
       <h2>Dealer's Zone</h2>
       <div className="card-area">
         {/* Place for displaying dealer's cards */}
@@ -15,4 +15,4 @@ const CroupierZone = () => {
   );
 };
 
-export default CroupierZone;
+export default DealerZone;

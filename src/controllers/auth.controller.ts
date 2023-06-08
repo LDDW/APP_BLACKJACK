@@ -1,9 +1,9 @@
 /**
  * Commenter vos méthodes
  */
-import {User} from "../entity/User";
+import {User} from "../entities/user.entity";
 import {hash, compare} from "bcrypt";
-import { AppDataSource } from "../data-source";
+import {myDataSource} from "../../data-source";
 import {sign} from "jsonwebtoken";
 
 class AuthController {
@@ -15,7 +15,7 @@ class AuthController {
 
 	}
 	public signup(req, res, next) {
-		const UserRepository = AppDataSource.getRepository(User);
+		const UserRepository = myDataSource.getRepository(User);
 		UserRepository.findOneBy({email : req.body.email})
 			.then(user => {
 		 		if(user){
@@ -26,10 +26,10 @@ class AuthController {
 						const user = new User;
 						user.email = req.body.email
 						user.password = hash
-						user.pseudo = req.body.pseudo
+						user.username = req.body.username
 						user.avatar = (req.body.avatar) ? req.body.avatar : ""
 
-						AppDataSource.manager.save(user)
+						 myDataSource.manager.save(user)
 							.then(()=> res.status(201).json({message: "Utilisateur créé"}))
 							.catch(error => res.status(400).json({error}))
 					})
@@ -39,7 +39,7 @@ class AuthController {
 	}
 
 	public login(req, res, next) {
-		const UserRepository = AppDataSource.getRepository(User);
+		const UserRepository = myDataSource.getRepository(User);
 		UserRepository.findOneBy({email : req.body.email})
 			.then(user => {
 				if(!user){

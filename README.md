@@ -76,6 +76,17 @@ Il offre une syntaxe simple et intuitive pour la définition des entités et des
 Il prend en charge les migrations de schéma et la synchronisation de base de données.
 Il dispose d'une communauté active et d'une documentation complète.
 
+### NPM commands
+
++ Lancer le serveur en mode dev
+```
+npm run dev 
+```
+
++ Lancer le serveur rest en mode dev
+```
+npm run dev:rest
+```
 ## Ressources
 
 - [Type ORM](https://typeorm.io/)

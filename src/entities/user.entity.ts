@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {GamePlayer} from "./game-player.entity";
 
 @Entity()
 export class User {
@@ -17,4 +18,7 @@ export class User {
 
     @Column()
     avatar: string
+
+    @OneToMany(() => GamePlayer, gamePlayer => gamePlayer.user)
+    gamePlayers: GamePlayer[];
 }

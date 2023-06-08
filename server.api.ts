@@ -10,6 +10,7 @@ import usersRouter from './routes/users.route';
 import apiRouter from './routes/api.route';
 import authRoute from "./routes/auth.route";
 import authRouter from "./routes/auth.route";
+import gameRouter from "./routes/game.route";
 
 /**
  * Serveur web 3333 -> React
@@ -36,6 +37,7 @@ const io = new Server(httpRestServer, socketConfig);
 app.use('/api', apiRouter);
 app.use('/user', usersRouter);
 app.use('/auth', authRouter);
+app.use('/game', gameRouter);
 
 httpRestServer.listen(portRestServer, () => {
 	console.log('listener on http://127.0.0.1:'+portRestServer);

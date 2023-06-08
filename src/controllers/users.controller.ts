@@ -3,7 +3,6 @@
  */
 import {User} from "../entities/user.entity";
 import {myDataSource} from "../../data-source";
-import {sign} from "jsonwebtoken";
 
 class UsersController {
 	constructor() {

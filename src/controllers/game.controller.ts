@@ -1,3 +1,6 @@
+import {gameRepository} from "../repository/game.repository";
+import {Game} from "../entities/game.entity";
+
 class GameController {
     public id;
     public deck;
@@ -21,6 +24,18 @@ class GameController {
         // console.log("Le sabot contient " + this.deck.length + " cartes");
         // console.log(this.deck);
         // ENDTEST
+    }
+
+    /**
+     * Create a new game
+     * @returns {Promise<Game>}
+     */
+    public create(nbPlayer: number, date: Date) {
+        const game = new Game();
+        game.nb_players = nbPlayer;
+        game.date_begin = date;
+        game.duration = date;
+        return gameRepository.save(game);
     }
 
     // Crée le jeu de cartes
@@ -263,8 +278,10 @@ class GameController {
         return points;
     }
 }
+export default new GameController(3);
 
 let game = new GameController(3);
+
 // TEST
 // console.log("\nLes joueurs s'installent à la table:");
 // game.addPlayer("Dany");

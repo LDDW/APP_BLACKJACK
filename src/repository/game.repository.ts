@@ -6,6 +6,15 @@ export const gameRepository = myDataSource.getRepository(Game).extend({
         return this.findOne({
             where: {
                 id: id
+            },
+            relations: {
+                gamePlayers: true,
+            },
+            select: {
+                gamePlayers: {
+                    userId: true,
+                    duration: true,
+                }
             }
         })
     },

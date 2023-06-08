@@ -27,14 +27,6 @@ class GamePlayerController {
             user: user
         });
     }
-
-    public getUsers(game: Game) {
-        return myDataSource.manager.find(GamePlayer, {
-            where: {
-                game: game
-            }
-        })
-    }
 }
 
 export default new GamePlayerController()

@@ -60,7 +60,7 @@ typeorm-extension db:create OR ts-node ./node_modules/typeorm-extension/dist/cli
 
 + Générer une migration
 ```
-npm run typeorm:generate <MigrationName>  
+npm run typeorm:generate name 
 ```
 + Lancer les migrations
 ```

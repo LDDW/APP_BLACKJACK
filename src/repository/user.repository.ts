@@ -1,7 +1,7 @@
 import {myDataSource} from "../../data-source";
 import {User} from "../entities/user.entity";
 
-export const userRepository = myDataSource.getRepository(User).extend({
+export const userRepository = myDataSource &&  myDataSource.getRepository(User).extend({
     findByEmail(email: string) {
         return this.findOne({
             where: {
@@ -15,14 +15,6 @@ export const userRepository = myDataSource.getRepository(User).extend({
                 username: username
             }
         })
-    },
-    create(email: string, password: string, username: string, avatar: string) {
-        const user = new User();
-        user.email = email;
-        user.password = password; //TODO : hash password
-        user.username = username;
-        user.avatar = avatar;
-        return this.save(user);
     },
     get(id: number) {
         return this.findOne({

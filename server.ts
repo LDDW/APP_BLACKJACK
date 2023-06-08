@@ -23,12 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static('public'));
 
-/**
- * Déclaration des routes avec préfix
- */
-app.use('/user', usersRouter);
-
-app.use((req, res, next) => {
+app.use('*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 

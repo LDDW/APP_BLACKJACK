@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    /* "dev": Compilation et lancement du serveur React + watch des modifs  */
+
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
-    /* "build": Compilation de tous les fichiers .ts dans le /dist */
+
     "build": "npx tsc",
-    /* "start:web": Lancement du serveur front */
+
     "start:web": "node dist/server.js",
-    /* "start:rest": Lancement du serveur back */
+
     "start:rest": "node dist/server.api.js",
-    /* "pm2:start": Lancement du serveur back avec pm2 + watch */
+
     "pm2:start": "pm2 start npm --name \"blackjack\" -- start --watch",
-    /*  "pm2:stop": Arrêt du serveur back */
+
     "pm2:stop": "pm2 stop blackjack"
   },
   "keywords": [],

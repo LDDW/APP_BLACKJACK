@@ -3,26 +3,24 @@
  */
 import {User} from "../entities/user.entity";
 import {myDataSource} from "../../data-source";
+import {sign} from "jsonwebtoken";
 
 class UsersController {
 	constructor() {
 
 	}
 
+	public create() {
 
-	public create(email: string, password: string, username: string, avatar: string) {
-		const user = new User();
-		user.email = email;
-		user.password = password; //TODO : hash password
-		user.username = username;
-		user.avatar = avatar;
-		return myDataSource.manager.save(user);
 	}
 
 	public update() {
 
 	}
 
+	public test(req, res, next) {
+		return res.status(201).json({msg: "OK"})
+	}
 	// ...
 }
 

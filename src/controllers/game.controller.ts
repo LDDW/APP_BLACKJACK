@@ -8,7 +8,7 @@ class GameController {
      * @returns {Promise<Game>}
      */
     public create(nbPlayer: number, date: Date) {
-        const game = new Game();
+        const game = new Game(3);
         game.nb_players = nbPlayer;
         game.date_begin = date;
         game.duration = date;

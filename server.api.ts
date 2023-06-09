@@ -8,11 +8,12 @@ import cors from 'cors';
 import { corsConfig } from './config/cors';
 import usersRouter from './routes/users.route';
 import apiRouter from './routes/api.route';
-import authRoute from "./routes/auth.route";
+import console from "console";
 import authRouter from "./routes/auth.route";
 import gameRouter from "./routes/game.route";
-import console from "console";
+import channelRouter from "./routes/channel.route";
 import {myDataSource} from "./data-source";
+import messageRouter from "./routes/message.route";
 
 /**
  * Serveur web 3333 -> React
@@ -50,6 +51,8 @@ app.use('/api', apiRouter);
 app.use('/user', usersRouter);
 app.use('/auth', authRouter);
 app.use('/game', gameRouter);
+app.use('/channel', channelRouter);
+app.use('/message', messageRouter);
 
 httpRestServer.listen(portRestServer, () => {
 	console.log('listener on http://127.0.0.1:'+portRestServer);

@@ -11,7 +11,7 @@ const gameRouter = express.Router();
  * @returns {Promise<Game>}
  */
 gameRouter.post('/create', (req, res, next) => {
-    let nbPlayer;
+    /* let nbPlayer;
     let date;
     console.log(req.body.nbPlayer);
     if (!req.body.nbPlayer) {
@@ -19,8 +19,8 @@ gameRouter.post('/create', (req, res, next) => {
         return res.send("Error: missing parameters").status(400);
     }
     date = req.body.date ? req.body.date : new Date();
-    nbPlayer = req.body.nbPlayer;
-    gameController.create(nbPlayer, date).then(r => {
+    nbPlayer = req.body.nbPlayer; */
+    gameController.create(3).then(r => {
         console.log(r);
         res.send(r).status(200);
     }).catch(e => {
@@ -48,4 +48,5 @@ gameRouter.get('/:id', (req, res, next) => {
         res.send(e).status(400);
     })
 });
+
 export default gameRouter;

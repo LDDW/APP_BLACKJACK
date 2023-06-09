@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8033b9c0-9da6-494d-b37f-a0c36eab3ec3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/front/src/actions/auth.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/config/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/helpers/cookie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/services/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/types/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/types/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/types/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/reportWebVitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/front-blackjack/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QulBknMiD9ceFEubC7vyDdC1Ma" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;react__front&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/APP_BLACKJACK/front/src/types&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/APP_BLACKJACK/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front/src/types" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front/src/services" />
+      <recent name="$PROJECT_DIR$/front" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8033b9c0-9da6-494d-b37f-a0c36eab3ec3" name="Changes" comment="" />
+      <created>1686211214120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686211214120</updated>
+      <workItem from="1686211216464" duration="11538000" />
+      <workItem from="1686292732603" duration="2793000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

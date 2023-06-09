@@ -6,10 +6,12 @@ import AdminLayout from "./AdminLayout";
 
 const AdminController = () => {
   return (
-    <AdminLayout>
-      <AdminDashboard />
-      <AdminSidebar />
-    </AdminLayout>
+    <>
+      <AdminLayout>
+        <AdminDashboard />
+        <AdminSidebar />
+      </AdminLayout>
+    </>
   );
 };
 

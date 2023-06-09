@@ -7,7 +7,7 @@ export class Channel {
     id: number
 
     @Column()
-    capacity: string
+    capacity: number
 
     @Column()
     message_path: string

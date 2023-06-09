@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 // TODO : changer le path pour utiliser l'api
-import data from "./users.json";
+// import data from "./users.json";
 import { Link } from "react-router-dom";
 
 const AdminUser = () => {
-  console.log(data);
+  // console.log(data);
 
-  const [users, setUsers] = useState(data);
+  // const [users, setUsers] = useState(data);
 
   // const [users, setUsers] = useState([]);
 
@@ -31,7 +31,7 @@ const AdminUser = () => {
   return (
     <div>
       <h2>Liste des utilisateurs</h2>
-      <ul>
+      {/* <ul>
         {data.map((user) => (
           <li key={user.id}>
             <p>Email: {user.email}</p>
@@ -47,7 +47,7 @@ const AdminUser = () => {
             </button>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

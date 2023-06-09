@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # APP_BLACKJACK
 
 ## ExpressJS
@@ -94,3 +95,6 @@ npm run dev:rest
 ## Authors
 
 ## License
+=======
+# APP_BLACKJACK
+>>>>>>> Stashed changes

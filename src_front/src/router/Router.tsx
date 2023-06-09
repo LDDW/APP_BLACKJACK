@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../components/Home";
 import AdminDashboard from "../components/admin/AdminDashboard";
+import AdminController from "../components/admin/AdminController";
+import Game from "../components/game/Game";
 
 const Router = () => {
   const location = useLocation();

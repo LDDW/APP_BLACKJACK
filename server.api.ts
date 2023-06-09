@@ -11,9 +11,7 @@ import apiRouter from './routes/api.route';
 import console from "console";
 import authRouter from "./routes/auth.route";
 import gameRouter from "./routes/game.route";
-import channelRouter from "./routes/channel.route";
 import {myDataSource} from "./data-source";
-import messageRouter from "./routes/message.route";
 
 /**
  * Serveur web 3333 -> React
@@ -33,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
  * Socket.io
  */
 const io = new Server(httpRestServer, socketConfig);
-
+import "./src/services/socket/main";
 /**
  * Initialisation de la connexion à la base de données
  */

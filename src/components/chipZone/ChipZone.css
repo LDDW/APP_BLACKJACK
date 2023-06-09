@@ -1,11 +1,12 @@
 .chip-zone {
-    background-color: #990000;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .chip-container {
-    /* Styles for displaying the chips */
-  }
-  
+  display: flex;
+  /* width: 300px; */
+  /* background-color: #990000; */
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.chip-container {
+  /* Styles for displaying the chips */
+}

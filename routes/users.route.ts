@@ -3,6 +3,9 @@ import express from 'express';
 const usersRouter = express.Router();
 import AuthMiddleware from "../src/middleware/authMiddleware";
 import {userRepository} from "../src/repository/user.repository";
+import UsersController from "../src/controllers/users.controller";
+import {myDataSource} from "../data-source";
+import {User} from "../src/entities/user.entity";
 
 /**
  * Get a user
@@ -15,14 +18,7 @@ usersRouter.get('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next
     } else if (!Number(req.params.id)) {
         return res.send("Error: id is not a number").status(400);
     }
-    let identifiedUserId = req.auth.userId.userId;
-    let identifiedUser = await userRepository.get(Number(identifiedUserId));
-    let id = Number(req.params.id);
-    if (identifiedUser.id !== id && !identifiedUser.roles.includes("admin")) {
-        return res.send("Error: unauthorized").status(401);
-    } else {
-        return res.send("Error: not implemented").status(501);
-    }
+    UsersController.get(req, res, next);
 });
 
 /**
@@ -31,19 +27,13 @@ usersRouter.get('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next
  * @returns {Promise<User>}
  */
 usersRouter.delete('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
-    let identifiedUserId = req.auth.userId.userId;
-    let identifiedUser = await userRepository.get(Number(identifiedUserId));
-    if (!identifiedUser.roles.includes("admin")) {
-        return res.send("Error: unauthorized").status(401);
-    }
     if (!req.params.id) {
         return res.send("Error: missing parameters").status(400);
     } else if (!Number(req.params.id)) {
         return res.send("Error: id is not a number").status(400);
     }
-    return res.send("Error: not implemented").status(501);
+    UsersController.delete(req, res, next);
 });
-
 
 /**
  * Update a user
@@ -51,38 +41,13 @@ usersRouter.delete('/:id', (req, res, next) => AuthMiddleware.verify(req, res, n
  * @returns {Promise<User>}
  */
 usersRouter.put('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
-    let identifiedUserId = req.auth.userId.userId;
-    let identifiedUser = await userRepository.get(Number(identifiedUserId));
-    if (!identifiedUser.roles.includes("admin") || identifiedUser.id !== Number(req.params.id)) {
-        return res.send("Error: unauthorized").status(401);
-    }
-    if (!req.params.id) {
-        return res.send("Error: missing parameters").status(400);
-    } else if (!Number(req.params.id)) {
-        return res.send("Error: id is not a number").status(400);
-    }
 
-    let toUpdate = {
-        email: req.body.email,
-        password: null,
-        username: req.body.username,
-        avatar: req.body.avatar,
-        roles: null
+    if(req.params.id && req.body.username && req.body.email){
+        UsersController.update(req, res, next)
     }
-    if (identifiedUser.roles.includes("admin") && req.body.roles) {
-        toUpdate.roles = req.body.roles;
-    } else if (!identifiedUser.roles.includes("admin") && req.body.roles) {
-        return res.send("Error: unauthorized").status(401);
-    } else if (identifiedUser.id === Number(req.params.id) && req.body.password) {
-        toUpdate.password = req.body.password;
-    } else if ((identifiedUser.id !== Number(req.params.id) || !identifiedUser.roles.includes("admin")) && req.body.password) {
-        return res.send("Error: unauthorized").status(401);
+    else{
+        res.status(401).json({message: "manque de paramètre"})
     }
-
-    if (!toUpdate.email && !toUpdate.password && !toUpdate.username && !toUpdate.avatar && !toUpdate.roles) {
-        return res.send("Error: missing parameters").status(400);
-    }
-    return res.send("Error: not implemented").status(501);
 });
 
 /**
@@ -90,12 +55,18 @@ usersRouter.put('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next
  * @returns {Promise<User>}
  */
 usersRouter.get('/', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
-    let identifiedUserId = req.auth.userId.userId;
-    let identifiedUser = await userRepository.get(Number(identifiedUserId));
-    if (!identifiedUser.roles.includes("admin")) {
-        return res.send("Error: unauthorized").status(401);
-    }
-    return res.send("Error: not implemented").status(501);
+    const UserRepository = myDataSource.getRepository(User);
+    UserRepository.findOneBy({id : req.auth.userId.userId})
+        .then( user => {
+            if(user /* A modifier pour verifieer admin */ ){
+                UsersController.getAll(req, res, next);
+            }
+            else{
+                res.status(500).json({error: "error"})
+            }
+
+        })
+        .catch(error => res.status(500).json({error}));
 });
 
 export default usersRouter;

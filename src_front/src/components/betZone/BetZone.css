@@ -1,0 +1,28 @@
+.BetZone {
+    width: 300px;
+    height: 70px;
+    background-color: #C4AF9A;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.BetText {
+    margin-right: 10px;
+}
+
+.BetInput {
+    margin-left: 5px;
+    width: 100px;
+    margin: 0;
+    box-shadow: none;
+    outline: none;
+    border-radius: 5%;
+}
+
+.IncrementButton, .DecrementButton {
+    position: relative;;
+    border: none;
+    width: 20px;
+    
+}

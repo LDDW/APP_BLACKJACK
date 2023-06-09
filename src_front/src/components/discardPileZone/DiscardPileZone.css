@@ -1,0 +1,13 @@
+.deckReverse {
+  text-align: left;
+  position: left 100px;
+  margin-left: 50px;
+}
+
+.discardPileZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

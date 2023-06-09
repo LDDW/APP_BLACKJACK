@@ -1,7 +1,7 @@
 import express from 'express';
 import { portRestServer } from './config/server';
 import { createServer } from 'http';
-import { Server } from "socket.io";
+import { Server } from 'socket.io';
 import { socketConfig } from './config/socket';
 import bodyParser from 'body-parser';
 import cors from 'cors';

@@ -13,14 +13,12 @@ io.on('connection', (socket) => {
   socket.on("joinRoom", (roomName) => {
     socket.join(roomName);
     console.log(`🚪: ${socket.id} a rejoint la room ${roomName}`);
-    sendRoomList()
-
+    sendUsersRoom(roomName)
   });
 
   // Envoie d'un message à tous les clients dans une room spécifique
   socket.on("message", (data) => {
     const roomName = data.room;
-    console.log(data);
     io.to(roomName).emit("messageResponse", data);
   });
 
@@ -30,18 +28,36 @@ io.on('connection', (socket) => {
     socket.to(roomName).emit("typingResponse", data.typing);
   });
 
+
+   function sendUsersRoom(roomName){
+    let roomsused = [];
+    let i = 0;
+
+    while(i < users.length){
+      if(roomName == users[i].room){
+        console.log('dans le if')
+        roomsused.push(users[i].userName);
+      }
+      i++;
+    }
+    console.log("Dans la function");
+    console.log(roomsused);
+    
+    io.to(roomName).emit("newUserResponse", roomsused);
+   }
+
+
   // Gestion des nouveaux utilisateurs
   socket.on("newUser", (data) => {
-    console.log(data)
-    console.log(users)
     const roomName = data.room;
-    users.push(data.userName);
-    console.log(users);
-    io.to(roomName).emit("newUserResponse", users);
+    users.push(data);
+    sendUsersRoom(roomName)
   });
+
 
   // Quitter une room spécifique
   socket.on("leaveRoom", (roomName) => {
+    
     socket.leave(roomName);
     console.log(`🚪: ${socket.id} a quitté la room ${roomName}`);
   });
@@ -49,14 +65,26 @@ io.on('connection', (socket) => {
   // Déconnexion de l'utilisateur
   socket.on('disconnect', () => {
     console.log('🔥: Un utilisateur s\'est déconnecté');
+    
+    console.log(users);
     users = users.filter(user => user.socketID !== socket.id);
-    io.emit("newUserResponse", users);
+    let i =0;
+    console.log(users);
+
+    while(i < users.length){
+      if(socket.id == users[i].socketID){
+        sendUsersRoom(users[i].room)
+      }
+      i++;
+    }
+    // io.emit("newUserResponse", users);
     socket.disconnect();
   });
 
   function sendRoomList(){
     const rooms = io.sockets.adapter.rooms;
     const roomList = Array.from(rooms.keys());
+    
     io.emit("roomListResponse", roomList);
 }
 });

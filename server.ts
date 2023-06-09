@@ -17,6 +17,7 @@ const httpWebServer = createServer(app);
 /**
  * Déclaration des middlewares
  */
+
 app.use(bodyParser.json());
 app.use(cors(corsConfig));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,4 +36,3 @@ app.use((req, res, next) => {
 httpWebServer.listen(portWebServer, () => {
 	console.log('listener on http://127.0.0.1:'+portWebServer);
 });
-

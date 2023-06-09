@@ -5,6 +5,7 @@ import deckImage from '../../assets/deckImageReverse.png';
 import './DiscardPileZone.css';
 
 
+
 const DiscardPileZone = () => {
   return (
       <div className="discardPileZone">

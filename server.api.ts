@@ -11,6 +11,8 @@ import apiRouter from './routes/api.route';
 import authRoute from "./routes/auth.route";
 import authRouter from "./routes/auth.route";
 import gameRouter from "./routes/game.route";
+import console from "console";
+import {myDataSource} from "./data-source";
 
 /**
  * Serveur web 3333 -> React
@@ -30,6 +32,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
  * Socket.io
  */
 const io = new Server(httpRestServer, socketConfig);
+
+/**
+ * Initialisation de la connexion à la base de données
+ */
+myDataSource.initialize().then(() => {
+	console.log("Connection to database established")
+})
+	.catch((err) => {
+		console.log("Connection to database failed", err)
+	});
 
 /**
  * Déclaration des routes avec préfix

@@ -1,9 +1,8 @@
 import React from 'react';
 
-
 import DealerZone from '../dealerZone/DealerZone';
 import ShoeZone from "../shoeZone/ShoeZone";
-import DiscardPileZone from "../discardPileZone/DiscardPileZOne";
+import DiscardPileZone from '../discardPileZone/DiscardPileZone';
 import ChipZone from "../chipZone/ChipZone";
 import RuleZone from "../ruleZone/RuleZone";
 import PlayerZone from "../playerZone/PlayerZone";
@@ -17,9 +16,9 @@ const Game = () => {
             <div className="App" >
                 <header className="App-header">
                     <DealerZone />
-                    
-                    <ShoeZone />
                     <DiscardPileZone />
+                    {/* <ShoeZone /> */}
+                    
                     <ChipZone />
                     { <PlayerZone playerName={playerName}/> }
                     <BetZone minValue={2} />

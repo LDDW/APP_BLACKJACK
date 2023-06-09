@@ -36,10 +36,15 @@ const AdminUser = () => {
           <li key={user.id}>
             <p>Email: {user.email}</p>
             <p>Nom: {user.username}</p>
-            <Link to={`/admin/users/edit/${user.id}`} className="nav-link">
+            <Link
+              to={`/admin/users/edit/${user.id}`}
+              className="btn btn-primary"
+            >
               Éditer
             </Link>
-            <button onClick={() => handleDelete}>Supprimer</button>
+            <button onClick={() => handleDelete} className="btn btn-danger">
+              Supprimer
+            </button>
           </li>
         ))}
       </ul>

@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER  */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+#header{
+  background-color: #005315;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #00763a;
-  min-height: 100vh;
+#header .container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+#title-header {
+  display: flex;  
+  width: 50%;
+}
+
+
+#title-header a {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+#title-header a img {
+  width: 70px;
+  height: auto;
+  margin-right: 20px;
+}
+
+#title-header a h1 {
+  color: #ED0000;
+  font-family: 'Irish Grover';
+  font-size: 2rem;
+  /* font-size: 40px; */
+}
+
+#menu-header {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#menu-header li {
+  list-style-type: none;
+}
+
+#menu-header li a i {
   color: white;
+  /* text-decoration: none; */
+  font-size: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* HOME */
+main {
+  min-height: 60vh;
+}
+.title-home {
+  margin: 0 auto;
+  font-size: 5rem;
+  text-align: center;
+  padding: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #005315;
+  padding: 10px;
+}
+
+footer a, li {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+}
+
+footer li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+footer ul {
+  margin-bottom: 0;
+}
+
+footer li:hover {
+  color: yellow;
+}
+
+footer img {
+  width: 100px;
+}
+
+@media (max-width: 575px) {
+  footer {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  footer ul {
+    text-align: center;
+    padding: 0;
   }
+  
+
+
+  footer a {
+    text-align: center;
+  }
+
+  footer nav link {
+    width: 100%;
+  }
+
 }

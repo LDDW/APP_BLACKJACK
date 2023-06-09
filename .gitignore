@@ -2,9 +2,11 @@
 
 # dependencies
 /node_modules
+/front/front-blackjack/node_modules
 /.pnp
 .pnp.js
 /dist
+/front/front-blackjack/build
 
 # testing
 /coverage

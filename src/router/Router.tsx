@@ -9,7 +9,7 @@ const Router = () => {
     <div>
       <Routes>
         <Route path="/" />
-        <Route path="/admin" element={<AdminController />} />
+        <Route path="/admin/*" element={<AdminController />} />
         <Route path="/game" element={<Game />} />
       </Routes>
       {/* {pathname.startsWith("/admin") && <AdminRouter />} */}

@@ -1,15 +1,20 @@
 import React from 'react';
 import './ChipZone.css';
+import Chip from '../chip/Chip';
 
 const ChipZone = () => {
   return (
     <div className="chip-zone">
-      <h2>Chip Zone</h2>
       <div className="chip-container">
-        {/* Place for displaying the chips */}
+        <div>
+            <Chip value={50} color="red" />
+            <Chip value={100} color="green" />
+            <Chip value={500} color="blue" />
+        </div>
       </div>
     </div>
   );
 };
 
 export default ChipZone;
+

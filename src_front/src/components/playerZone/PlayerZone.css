@@ -1,0 +1,15 @@
+.player-zone {
+    background-color: #009688;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .card-area {
+    /* Styles for displaying player's cards */
+  }
+  
+  .bet-area {
+    /* Styles for displaying player's bets */
+  }
+  

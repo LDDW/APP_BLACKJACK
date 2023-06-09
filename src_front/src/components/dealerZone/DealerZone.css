@@ -1,0 +1,39 @@
+.dealerZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
+
+.dealerIcon {
+  width: 100px; 
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.dealerCards {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  width: 60px; 
+  height: auto;
+}
+
+.deck {
+  text-align: right;
+  position: absolute;
+  right: 100px;
+}

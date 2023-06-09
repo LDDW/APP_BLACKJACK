@@ -1,0 +1,168 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER  */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+#header{
+  background-color: #005315;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+#title-header {
+  display: flex;  
+  width: 50%;
+}
+
+
+#title-header a {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  align-items: center;
+}
+
+
+#title-header a img {
+  width: 70px;
+  height: auto;
+  margin-right: 20px;
+}
+
+#title-header a h1 {
+  color: #ED0000;
+  font-family: 'Irish Grover';
+  font-size: 2rem;
+  /* font-size: 40px; */
+}
+
+#menu-header {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#menu-header li {
+  list-style-type: none;
+}
+
+#menu-header li a i {
+  color: white;
+  /* text-decoration: none; */
+  font-size: 40px;
+}
+
+#menu-header i:hover {
+  color: yellow;
+}
+
+
+
+/* HOME */
+main {
+  min-height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-image: url("./assets/Blackjack_board_flou.JPG");
+  background-size: cover;
+}
+
+.home-item {
+  border: 2px solid #005315;
+  border-radius: 15px;
+  background-color: #C4AF9A;
+}
+.home-games {  
+  width: 60%;  
+}
+
+.home-chat {
+  width: 35%;
+  text-align: center;
+}
+
+#title-chat {
+  color:white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+}
+
+.title-menu {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+}
+
+
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #005315;
+  padding: 10px;
+}
+
+footer a, li {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+}
+
+footer li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+footer ul {
+  margin-bottom: 0;
+}
+
+footer li:hover {
+  color: yellow;
+}
+
+footer img {
+  width: 100px;
+}
+
+@media (max-width: 575px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer ul {
+    text-align: center;
+    padding: 0;
+  }
+  
+
+
+  footer a {
+    text-align: center;
+  }
+
+  footer nav link {
+    width: 100%;
+  }
+
+}

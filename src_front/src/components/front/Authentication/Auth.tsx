@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
 import LoginForm from "./LoginForm";import SignupForm from "./SignUpForm";
 
 const Auth = () => {
-  return (
+  return ( <>
+    <Header />
     <main>
         <section id="auth">
             <div className="login">
@@ -19,6 +22,8 @@ const Auth = () => {
             </div> 
         </section>
     </main>
+    <Footer />
+    </>
   );
 };
 

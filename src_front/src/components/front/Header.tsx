@@ -15,7 +15,7 @@ const Header = () => {
         </div>
         <ul id="menu-header">
           <li>
-            <Link to={"/login"} className="nav-link">
+            <Link to={"/auth"} className="nav-link">
               <i className="fa-regular fa-user"></i>
             </Link>
           </li>

@@ -15,14 +15,6 @@ html, body {
   min-height: 100%;
 }
 
-footer {
-  margin-top: auto;
-}
-
-#root {
-  min-height: 100vh;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

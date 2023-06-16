@@ -76,12 +76,13 @@ body {
 
 /* HOME */
 main {
-  min-height: 60vh;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
   background-image: url("../../assets/Blackjack_board_flou.JPG");
   background-size: cover;
+  flex-grow: 2;
 }
 
 .home-item {
@@ -132,9 +133,6 @@ main {
 .title-menu{
   padding-top: 12px;
 }
-
-
-
 
 
 /* FOOTER */

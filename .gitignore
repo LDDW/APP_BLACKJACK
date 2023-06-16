@@ -1,4 +1,5 @@
 /node_modules
+/src_front/node_modules/
 /dist
 /.idea
 *.jsm

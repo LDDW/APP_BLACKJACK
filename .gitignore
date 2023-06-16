@@ -1,5 +1,10 @@
 /node_modules
+<<<<<<< Updated upstream
 /front/front-blackjack/
+=======
+/front/front-blackjack/node_modules
+/front/front-blackjack/build
+>>>>>>> Stashed changes
 /dist
 /.idea
 *.jsm

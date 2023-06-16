@@ -1,4 +1,5 @@
 /node_modules
+/front/front-blackjack/
 /dist
 /.idea
 *.jsm

@@ -76,7 +76,7 @@ main {
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  background-image: url("./assets/Blackjack_board_flou.JPG");
+  background-image: url("../../assets/Blackjack_board_flou.JPG");
   background-size: cover;
 }
 

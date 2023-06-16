@@ -10,7 +10,7 @@ const FrontController = () => {
   return (
     <>
       <Header />
-      
+      <Home />
       <Footer />
     </>
   );

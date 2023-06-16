@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <main>
       <div className="home-games home-item">
-        <div className="title-menu">
+        <div className="title-menu" id="top-games">
           <p>Parties en cours</p>
           <p>Mises</p>
           <p>Joueurs</p>

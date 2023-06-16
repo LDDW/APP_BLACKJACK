@@ -11,9 +11,9 @@ const Router = () => {
 
   const { pathname } = location;
   return (
-    <div>
+    <>
      
-  
+
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/auth" element={<Auth />} />
@@ -23,7 +23,7 @@ const Router = () => {
       </Routes>
     
       {/* {pathname.startsWith("/admin") && <AdminRouter />} */}
-    </div>
+      </>
   );
 };
 

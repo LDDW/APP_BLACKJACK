@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
-import Logo from '../../src/assets/logoSite.png';
+import "./App.css";
+import Logo from '../../assets/logoSite.png';
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
         </div>
         <ul id="menu-header">
           <li>
-            <Link to={"/login"} className="nav-link">
+            <Link to={"/auth"} className="nav-link">
               <i className="fa-regular fa-user"></i>
             </Link>
           </li>

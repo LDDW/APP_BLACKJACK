@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+}
+
 /* HEADER  */
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
 
@@ -72,18 +76,19 @@
 
 /* HOME */
 main {
-  min-height: 60vh;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  background-image: url("./assets/Blackjack_board_flou.JPG");
+  background-image: url("../../assets/Blackjack_board_flou.JPG");
   background-size: cover;
+  flex-grow: 2;
 }
 
 .home-item {
   border: 2px solid #005315;
   border-radius: 15px;
-  background-color: #C4AF9A;
+  background-color: #c0ae9c7c;
 }
 .home-games {  
   width: 60%;  
@@ -98,6 +103,10 @@ main {
   color:white;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.5rem;
+  background-color: #005315;
+  border-radius: 10px 10px 0 0;
+  height: 64px;
+  padding-top: 12px;
 }
 
 .title-menu {
@@ -108,7 +117,22 @@ main {
   font-size: 1.5rem;
 }
 
+.game-item{
+  color:#005315;
+}
 
+#top-games{
+  background-color: #005315;
+  border-radius: 10px 10px 0 0;
+}
+.game-item:hover{
+  background-color: white;
+  color:#005315;
+}
+
+.title-menu{
+  padding-top: 12px;
+}
 
 
 /* FOOTER */
@@ -165,4 +189,52 @@ footer img {
     width: 100%;
   }
 
+}
+
+/* AUTH */
+#auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 200px; */
+  width: 50%;
+  background-color: #cabcae65;
+  border-radius: 20px;
+}
+
+.login, .signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.login h2, .signUp h2 {
+  color: white;
+}
+
+.authForm div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.authForm div label {
+    color: black;
+}
+
+.authForm button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #005315;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+.authForm button:hover {
+  color: black;
 }

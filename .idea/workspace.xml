@@ -4,38 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8033b9c0-9da6-494d-b37f-a0c36eab3ec3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/front/src/actions/auth.action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/config/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/helpers/cookie.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/services/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/types/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/types/fetch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/types/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/front-blackjack/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;">
+      <change afterPath="$PROJECT_DIR$/mobile/src/navigator/stack.navigator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +21,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="node_front" />
+        <entry key="$PROJECT_DIR$" value="react_mobile" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,79 +37,63 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QulBknMiD9ceFEubC7vyDdC1Ma" />
+  <component name="ProjectId" id="2RI4ie9bUSxDo6STje7oxZmARZ8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;react__front&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/APP_BLACKJACK/front/src/types&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/APP_BLACKJACK/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "react__mobile",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "/Users/Nicolas/Apps/MyDigitalSchool/NEW_BLACKJACK/mobile/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/front/src/types" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/front/src/services" />
-      <recent name="$PROJECT_DIR$/front" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.dev" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8033b9c0-9da6-494d-b37f-a0c36eab3ec3" name="Changes" comment="" />
-      <created>1686211214120</created>
+      <changelist id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="" />
+      <created>1686924390614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1686211214120</updated>
-      <workItem from="1686211216464" duration="11538000" />
-      <workItem from="1686292732603" duration="2793000" />
+      <updated>1686924390614</updated>
+      <workItem from="1686924392829" duration="2859000" />
+      <workItem from="1687762108161" duration="2699000" />
     </task>
+    <task id="LOCAL-00001" summary="Add FetchRequest : Communication serveur front React">
+      <created>1686926863969</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686926863969</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;">
+      <created>1687763079053</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687763079053</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Add FetchRequest : Communication serveur front React" />
+    <MESSAGE value="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;" />
   </component>
 </project>

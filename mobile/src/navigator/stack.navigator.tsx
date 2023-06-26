@@ -1,6 +1,6 @@
 import {createNativeStackNavigator, NativeStackScreenProps} from "@react-navigation/native-stack";
 import ChatScreen from "../screens/chat/chat.screen";
-
+import ImagesScreen from "../screens/images/images.screen";
 /**
  * Navigateur React Native
  * Voir la doc : https://reactnavigation.org/docs/native-stack-navigator
@@ -20,6 +20,7 @@ import ChatScreen from "../screens/chat/chat.screen";
 type IRootParamsList = {
 	// Ajouter ici le nom des screens
 	Chat: undefined
+	Images: undefined
 }
 
 const Stack = createNativeStackNavigator<IRootParamsList>();
@@ -28,6 +29,7 @@ const StackNavigator = () => {
 	return (
 		<Stack.Navigator>
 			<Stack.Group>
+				<Stack.Screen name="Images" component={ImagesScreen}/>
 				<Stack.Screen name="Chat" component={ChatScreen}/>
 			</Stack.Group>
 		</Stack.Navigator>

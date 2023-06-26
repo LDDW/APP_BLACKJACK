@@ -6,9 +6,9 @@ import {NavigationContainer} from "@react-navigation/native";
 const App = () => {
   return (
     <SafeAreaProvider>
-    <NavigationContainer>
-      <StackNavigator/>
-      </NavigationContainer>
+        <NavigationContainer>
+            <StackNavigator/>
+        </NavigationContainer>
     </SafeAreaProvider>
   )
 }

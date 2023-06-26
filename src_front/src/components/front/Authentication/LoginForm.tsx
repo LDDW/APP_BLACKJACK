@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import Swal from "sweetalert2";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -7,8 +8,38 @@ function LoginForm() {
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    // TODO: validate and submit the email and password
-    alert(`Email: ${email}, Password: ${password}`);
+    const body = {
+      email: `${email}`,
+      password: `${password}`,
+    };
+    const url = "http://localhost:3333/auth/login";
+
+    const login = async (url: string) => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+  
+        if (!response.ok) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'L\'adresse email ou votre mot de passe est incorrect.',
+          })
+        }
+  
+        const data = await response.json();
+        //enregistrer en session data.token
+        localStorage.setItem('token', data.token);
+        window.location.reload();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    login(url);
+    // alert(`Email: ${email}, Password: ${password}`);
   };
 
   return (

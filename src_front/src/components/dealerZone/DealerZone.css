@@ -8,11 +8,26 @@
 }
 
 .dealerIcon {
-  width: 100px; 
+  width: 5px;
   height: auto;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.dealer-img {
+  width: 4em;
+  height: auto;
+}
+
+.card {
+  width: 3em;
+  height: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
 }
 
 .dealerCards {
@@ -25,13 +40,10 @@
   margin-bottom: 20px;
 }
 
-.cards {
-  display: flex;
-  gap: 15px;
-}
+
 
 .card {
-  width: 60px; 
+  width: 3em;
   height: auto;
 }
 
@@ -40,3 +52,10 @@
   position: absolute;
   right: 100px;
 }
+
+.deck-img {
+  width: 5em;
+  height: auto;
+}
+
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import './PlayerZone.css';
+import ChipZone from "../chipZone/ChipZone";
 
 interface PlayerZoneProps {
   playerNames: string[];
@@ -38,6 +39,7 @@ const PlayerZone: React.FC<PlayerZoneProps> = ({ playerNames, playerStatuses, ca
             transform: `rotate(${calculateRotation(index)}deg)`,
           }}
         >
+          <ChipZone/>
           <div className="playerName">{playerName}</div>
           <div className={`cardValue ${playerStatuses[index] !== 'played' ? 'empty' : ''}`}>{playerStatuses[index] === 'played' ? cardValues[index] : ''}</div>
           <div className={`rectangle rectangle-${playerStatuses[index]}`}></div>

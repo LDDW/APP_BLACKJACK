@@ -83,6 +83,18 @@ class UsersController {
 			.then(userAll => res.status(201).json({user: userAll}))
 			.catch(error => res.status(401).json({error}))
 	}
+
+	public checkRole(req, res, next) {
+		const UserRepository = myDataSource.getRepository(User);
+		UserRepository.findOneBy({id : req.auth.userId.userId})
+			.then(identifiedUser => {
+				if(identifiedUser.roles.includes("ROLE_ADMIN")){
+					res.status(200).json('ok ma gueule')
+				}
+				res.status(401).json('pas ok ma gueule')
+			})
+			.catch(error => res.status(401).json({error}))
+	}
 }
 
 export default new UsersController()

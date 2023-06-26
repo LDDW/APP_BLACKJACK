@@ -8,15 +8,13 @@
   width: 150px;
 }
 
-
-
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #00763a;
+  background-color: rgba(0, 118, 58, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +23,20 @@
 .modal-content {
   background-color: #00763a;
   padding: 50px;
-  width: 80%;
+  color: #ffffff;
   max-width: 800px;
   position: relative;
+  width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modal-content h1 {
+  color: #ffffff; /* Couleur du texte en blanc pour la balise h1 */
 }
 
+.modal-content p {
+  color: #ffffff; /* Couleur du texte en blanc pour la balise p */
+}
 
 .modal-close {
   position: absolute;

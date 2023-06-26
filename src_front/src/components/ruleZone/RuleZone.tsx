@@ -20,17 +20,30 @@ const RuleZone: React.FC = () => {
           <div className="modal-content rules-open">
             <button onClick={closeModal} className="modal-close">Fermer</button>
             <h1>Règles du Blackjack</h1>
-            <p>En conditions normales, la maison a un avantage très mince...</p>
-            <h2>Valeurs des Cartes</h2>
-            <p>Vous devez connaître les valeurs des cartes...</p>
-            <h2>Déroulement du Jeu</h2>
-            <p>La règle du blackjack la plus importante est simple...</p>
-            <h2>Règles de la Table</h2>
-            <p>Lorsque vous jouez contre la maison...</p>
-            <h2>Règles du Croupier</h2>
-            <p>Le croupier joue essentiellement selon le même ensemble...</p>
-            <h2>Paiements Bonus</h2>
-            <p>Lorsqu'un joueur reçoit une main gagnante au blackjack...</p>
+            <p>
+              Le blackjack est un jeu de cartes où l'objectif est d'obtenir une main dont la valeur totale est plus proche de 21 que celle du croupier, sans dépasser 21.
+            </p>
+
+            <p>
+              Les cartes numérotées de 2 à 10 ont une valeur égale à leur chiffre, les figures (valet, dame, roi) valent 10 points et l'as peut valoir 1 ou 11 points.
+            </p>
+
+            <p>
+              Le croupier distribue deux cartes visibles aux joueurs et une carte visible à lui-même. Les joueurs peuvent demander des cartes supplémentaires ("hit"), rester avec leur main actuelle ("stand"), doubler leur mise et recevoir une carte supplémentaire ("double down"), ou séparer deux cartes de même valeur en deux mains distinctes ("split").
+            </p>
+
+            <p>
+              Une fois que les joueurs ont pris leurs décisions, le croupier révèle sa deuxième carte et doit tirer des cartes supplémentaires selon des règles prédéfinies. Le croupier doit atteindre un total de 17 ou plus, mais doit s'arrêter une fois atteint.
+            </p>
+
+            <p>
+              Un joueur gagne s'il a une main dont la valeur est plus élevée que celle du croupier sans dépasser 21. Si la main initiale d'un joueur est un blackjack (un as et une carte de valeur 10), il gagne automatiquement, sauf si le croupier a également un blackjack.
+            </p>
+
+            <p>
+              Si la main dépasse 21, le joueur perd. En cas d'égalité, la mise est rendue. Les résultats peuvent varier en fonction des règles spécifiques de la variante de blackjack jouée.
+            </p>
+
           </div>
         </div>
       )}
@@ -40,3 +53,14 @@ const RuleZone: React.FC = () => {
 
 export default RuleZone;
 
+<p>Le blackjack est un jeu de cartes où l'objectif est d'obtenir une main dont la valeur totale est plus proche de 21 que celle du croupier, sans dépasser 21.
+
+  Les cartes numérotées de 2 à 10 ont une valeur égale à leur chiffre, les figures (valet, dame, roi) valent 10 points et l'as peut valoir 1 ou 11 points.
+
+  Le croupier distribue deux cartes visibles aux joueurs et une carte visible à lui-même. Les joueurs peuvent demander des cartes supplémentaires ("hit"), rester avec leur main actuelle ("stand"), doubler leur mise et recevoir une carte supplémentaire ("double down"), ou séparer deux cartes de même valeur en deux mains distinctes ("split").
+
+  Une fois que les joueurs ont pris leurs décisions, le croupier révèle sa deuxième carte et doit tirer des cartes supplémentaires selon des règles prédéfinies. Le croupier doit atteindre un total de 17 ou plus, mais doit s'arrêter une fois atteint.
+
+  Un joueur gagne s'il a une main dont la valeur est plus élevée que celle du croupier sans dépasser 21. Si la main initiale d'un joueur est un blackjack (un as et une carte de valeur 10), il gagne automatiquement, sauf si le croupier a également un blackjack.
+
+  Si la main dépasse 21, le joueur perd. En cas d'égalité, la mise est rendue. Les résultats peuvent varier en fonction des règles spécifiques de la variante de blackjack jouée.</p>

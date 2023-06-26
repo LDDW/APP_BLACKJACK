@@ -40,7 +40,7 @@ const AdminUser = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((user) => (
+          {/* {data.map((user) => (
             <tr key={user.id}>
               <th scope="row">{user.id}</th>
               <td>{user.email}</td>
@@ -60,7 +60,7 @@ const AdminUser = () => {
                 </button>
               </td>
             </tr>
-          ))}
+          ))} */}
         </tbody>
       </table>
     </div>

@@ -55,6 +55,7 @@ class UsersController {
 						id: user.id,
 						username: user.username,
 						email: user.email,
+						roles: user.roles,
 						avatar: user.avatar,
 					}
 					return res.status(201).json({user: userData});
@@ -68,6 +69,7 @@ class UsersController {
 		const UserRepository = myDataSource.getRepository(User);
 		UserRepository.find({
 			select: {
+				id: true,
 				username: true,
 				email: true,
 				roles: true,

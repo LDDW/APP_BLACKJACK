@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-interface User {
-  id: number;
-  email: string;
-  username: string;
-}
-
 const AdminUser = () => {
   interface User {
     id: number;
@@ -76,7 +70,7 @@ const AdminUser = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(users); // Vérifier l'état users
+  console.log(users);
 
   return (
     <div>

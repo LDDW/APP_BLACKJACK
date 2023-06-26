@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AdminEditUser = () => {
@@ -118,6 +118,9 @@ const AdminEditUser = () => {
   return (
     <>
       <div>
+        <Link to={`/admin/users`} className="btn btn-light my-3">
+          Retour
+        </Link>
         <h2>Édition de l'utilisateur</h2>
         {user ? ( // Vérifiez si les données de l'utilisateur sont disponibles
           <form onSubmit={handleSubmit}>

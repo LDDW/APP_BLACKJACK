@@ -65,7 +65,7 @@ const AdminUser = () => {
       }
 
       const data = await response.json();
-      const userList = data; // Si les utilisateurs sont directement dans data, sans propriété "user"
+      const userList = data;
       console.log(userList);
 
       setUsers(userList.user); // Mettre à jour l'état avec la liste des utilisateurs
@@ -110,8 +110,8 @@ const AdminUser = () => {
           title: "Utilisateur supprimé",
         });
         login(logUrl)
-        .then((data) => fetchData(url, data.token))
-        .catch((error) => console.log(error));
+          .then((data) => fetchData(url, data.token))
+          .catch((error) => console.log(error));
       }
     });
   };

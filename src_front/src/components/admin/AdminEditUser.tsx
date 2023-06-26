@@ -12,7 +12,6 @@ const AdminEditUser = () => {
   const { id } = useParams();
 
   const url = `http://localhost:3333/user/${id}`;
-  const logUrl = "http://localhost:3333/auth/login";
   const body = {
     email: "arthurldh@gmail.com",
     password: "test",
@@ -30,32 +29,11 @@ const AdminEditUser = () => {
     },
   });
 
-  const login = async (url: string) => {
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error(
-          "Une erreur est survenue lors de la récupération des données."
-        );
-      }
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchUser = async (url: string, token: string) => {
+  const fetchUser = async (url: string) => {
     try {
       const response = await fetch(url, {
         method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
 
       if (!response.ok) {
@@ -72,13 +50,13 @@ const AdminEditUser = () => {
     }
   };
 
-  const updateUser = async (url: string, token: string, updatedUser: User) => {
+  const updateUser = async (url: string, updatedUser: User) => {
     try {
       const response = await fetch(url, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
         body: JSON.stringify(updatedUser),
       });
@@ -96,9 +74,7 @@ const AdminEditUser = () => {
   };
 
   useEffect(() => {
-    login(logUrl)
-      .then((data) => fetchUser(url, data.token))
-      .catch((error) => console.log(error));
+      fetchUser(url)
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -109,9 +85,7 @@ const AdminEditUser = () => {
         title: "Utilisateur mis à jour",
       });
 
-      login(logUrl)
-        .then((data) => updateUser(url, data.token, user))
-        .catch((error) => console.log(error));
+      updateUser(url, user)
     }
   };
 

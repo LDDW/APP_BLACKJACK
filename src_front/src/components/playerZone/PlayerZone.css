@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end; 
+  height: 100%;
 }
 
 .playerName {
@@ -48,3 +50,4 @@
   text-align: center;
   color: #fff;
 }
+

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const AdminUser = () => {
   interface User {
@@ -17,6 +17,18 @@ const AdminUser = () => {
     email: "arthurldh@gmail.com",
     password: "test",
   };
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   const login = async (url: string) => {
     try {
@@ -62,7 +74,7 @@ const AdminUser = () => {
     }
   };
 
-  const deleteUser = async(deleteUrl: string, token: string) => {
+  const deleteUser = async (deleteUrl: string, token: string) => {
     try {
       const response = await fetch(deleteUrl, {
         method: "DELETE",
@@ -77,23 +89,31 @@ const AdminUser = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const handleDelete = (id: number) => {
     // Logique de suppression d'un utilisateur
     Swal.fire({
-      title: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?',
+      title: "Etes-vous sûr de vouloir supprimer cet utilisateur ?",
       showCancelButton: true,
-      confirmButtonText: 'Supprimer',
+      confirmButtonText: "Supprimer",
       cancelButtonText: `Annuler`,
     }).then((result) => {
       if (result.isConfirmed) {
-          login(logUrl)
-            .then((data) => deleteUser(`http://localhost:3333/user/${id}`, data.token))
-            .catch((error) => console.log(error));
-        Swal.fire('Utilisateur supprimé', '', 'success')
+        login(logUrl)
+          .then((data) =>
+            deleteUser(`http://localhost:3333/user/${id}`, data.token)
+          )
+          .catch((error) => console.log(error));
+        Toast.fire({
+          icon: "success",
+          title: "Utilisateur supprimé",
+        });
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       }
-    })
+    });
   };
 
   useEffect(() => {

@@ -102,8 +102,6 @@ const AdminUser = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(users);
-
   return (
     <div>
       <h2>Liste des utilisateurs</h2>

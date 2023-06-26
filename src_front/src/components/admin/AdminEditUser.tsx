@@ -9,7 +9,6 @@ const AdminEditUser = () => {
   }
   const [user, setUser] = useState<User | null>(null);
   const { id } = useParams();
-  console.log(id);
 
   const url = `http://localhost:3333/user/${id}`;
   const logUrl = "http://localhost:3333/auth/login";

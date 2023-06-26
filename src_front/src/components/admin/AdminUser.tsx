@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // TODO : changer le path pour utiliser l'api
-import data from "./users.json";
+// import data from "./users.json";
 import { Link } from "react-router-dom";
 
 const AdminUser = () => {

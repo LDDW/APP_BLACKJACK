@@ -13,7 +13,7 @@ const AdminLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
         <Routes>
           <Route path="/users" element={<AdminUser />} />
-          <Route path="/users/edit/*" element={<AdminEditUser />} />
+          <Route path="/users/edit/:id" element={<AdminEditUser />} />
         </Routes>
       </div>
     </div>

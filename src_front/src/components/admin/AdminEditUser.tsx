@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdminEditUser = () => {
   interface User {
@@ -16,6 +17,18 @@ const AdminEditUser = () => {
     email: "arthurldh@gmail.com",
     password: "test",
   };
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   const login = async (url: string) => {
     try {
@@ -91,6 +104,11 @@ const AdminEditUser = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (user) {
+      Toast.fire({
+        icon: "success",
+        title: "Utilisateur mis à jour",
+      });
+
       login(logUrl)
         .then((data) => updateUser(url, data.token, user))
         .catch((error) => console.log(error));

@@ -12,10 +12,6 @@ const AdminEditUser = () => {
   const { id } = useParams();
 
   const url = `http://localhost:3333/user/${id}`;
-  const body = {
-    email: "arthurldh@gmail.com",
-    password: "test",
-  };
 
   const Toast = Swal.mixin({
     toast: true,

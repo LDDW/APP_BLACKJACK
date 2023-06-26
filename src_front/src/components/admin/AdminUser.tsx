@@ -11,10 +11,6 @@ const AdminUser = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   const url = "http://localhost:3333/user";
-  const body = {
-    email: "arthurldh@gmail.com",
-    password: "test",
-  };
 
   const Toast = Swal.mixin({
     toast: true,

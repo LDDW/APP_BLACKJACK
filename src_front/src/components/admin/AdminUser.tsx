@@ -66,7 +66,6 @@ const AdminUser = () => {
 
       const data = await response.json();
       const userList = data;
-      console.log(userList);
 
       setUsers(userList.user); // Mettre à jour l'état avec la liste des utilisateurs
     } catch (error) {

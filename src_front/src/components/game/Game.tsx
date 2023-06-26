@@ -15,9 +15,9 @@ const players = [
 ];
 const playerNames = ["The-Jules6666", "Pierre", "Paul", "Jacques", "Sophie", "Marie", "Louise"];
 // Récupération du status du joueur passé en props de PlayerZone
-const playerStatuses = ["not-played", "not-played", "playing", "not-played", "played", "not-played", "not-played"]; // Exemple de statuts
+const playerStatuses = ["not-played", "not-played", "not-played", "playing", "played", "played", "played"]; // Exemple de statuts
 // Récupération des valeurs des cartes
-const cardValues = [10, 20, 15, 0, 18, 0, 0];
+const cardValues = [10, 20, 15, 0, 18, 16, 20];
 
 const Game = () => {
     return(

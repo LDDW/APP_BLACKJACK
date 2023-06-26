@@ -7,5 +7,6 @@
 }
 
 .chip-container {
-  /* Styles for displaying the chips */
+  /* Ajoute de l'espace autour de chaque chip-container */
+  margin: 10px;
 }

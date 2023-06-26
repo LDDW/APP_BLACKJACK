@@ -1,65 +1,159 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdminEditUser = () => {
+  interface User {
+    id: number;
+    email: string;
+    username: string;
+  }
+  const [user, setUser] = useState<User | null>(null);
   const { id } = useParams();
 
-  const [user, setUser] = useState(null);
+  const url = `http://localhost:3333/user/${id}`;
+  const logUrl = "http://localhost:3333/auth/login";
+  const body = {
+    email: "arthurldh@gmail.com",
+    password: "test",
+  };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        // on récupère les données de l'utilisateur
-        const response = await fetch(`/api/users/${id}`);
-        const userData = await response.json();
-        setUser(userData);
-      } catch (error) {
-        console.error("Erreur lors du chargemet de l'utilisateur : ", error);
-      }
-    };
-    fetchUser();
-  }, [id]);
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const login = async (url: string) => {
     try {
-      // on envoie les données de l'utlisateur mises à jour
-      await fetch(`/api/users/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
       });
-      console.log("Utilisateur mis à jour avec succès");
-      // TODO : redirection
+
+      if (!response.ok) {
+        throw new Error(
+          "Une erreur est survenue lors de la récupération des données."
+        );
+      }
+
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error("Erreur lors de la mise à jour de l'utilisateur : ", error);
+      console.log(error);
     }
   };
 
-  if (!user) {
-    return <div>Chargemet en cours..</div>;
-  }
+  const fetchUser = async (url: string, token: string) => {
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          "Une erreur est survenue lors de la récupération des données."
+        );
+      }
+
+      const data = await response.json();
+      const userData = data.user; // Assurez-vous d'extraire les données de l'utilisateur correctement
+      setUser(userData); // Mettez à jour l'état avec les données de l'utilisateur
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateUser = async (url: string, token: string, updatedUser: User) => {
+    try {
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(updatedUser),
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          "Une erreur est survenue lors de la mise à jour de l'utilisateur."
+        );
+      }
+
+      console.log("Utilisateur mis à jour avec succès !");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    login(logUrl)
+      .then((data) => fetchUser(url, data.token))
+      .catch((error) => console.log(error));
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (user) {
+      Toast.fire({
+        icon: "success",
+        title: "Utilisateur mis à jour",
+      });
+
+      login(logUrl)
+        .then((data) => updateUser(url, data.token, user))
+        .catch((error) => console.log(error));
+    }
+  };
 
   return (
     <>
       <div>
+        <Link to={`/admin/users`} className="btn btn-light my-3">
+          Retour
+        </Link>
         <h2>Édition de l'utilisateur</h2>
-        <form onSubmit={handleSubmit}>
-          {/* On affiche le formulaire pré-rempli */}
-          <input
-            type="text"
-            // value={user.username}
-            // onChange={(e) => setUser({ ...user, username: e.target.value })}
-          />
-          <input
-            type="email"
-            // value={user.email}
-            // onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-          <button type="submit">Enregistrer</button>
-        </form>
+        {user ? ( // Vérifiez si les données de l'utilisateur sont disponibles
+          <form onSubmit={handleSubmit}>
+            {/* On affiche le formulaire pré-rempli avec les informations de l'utilisateur */}
+            <div className="mb-3">
+              <label htmlFor="username" className="form-label">
+                Nom de l'utilisateur
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={user.username}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email de l'utilisateur
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Enregistrer
+            </button>
+          </form>
+        ) : (
+          <p>Chargement en cours...</p>
+        )}
       </div>
     </>
   );

@@ -23,7 +23,6 @@ const Router = () => {
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/admin/*" element={<AdminController />} />
                 <Route path="/game" element={<Game />} />
-                <Route path="/admin" element={<AdminDashboard />} />
                 <Route
                     path="/chat"
                     element={<ChooseName socket={socket} />}

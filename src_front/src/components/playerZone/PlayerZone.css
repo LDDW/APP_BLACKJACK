@@ -1,15 +1,41 @@
-.player-zone {
-    background-color: #009688;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .card-area {
-    /* Styles for displaying player's cards */
-  }
-  
-  .bet-area {
-    /* Styles for displaying player's bets */
-  }
-  
+.playerZone {
+  background-color: #00763a; 
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.rectangleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.playerName {
+  margin-bottom: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  border-width: 2px;
+  border-style: solid;
+  margin-bottom: 3px; 
+}
+
+
+.rectangle-not-played {
+  border-color: yellow;
+}
+
+.rectangle-playing {
+  border-color: red;
+}
+
+.rectangle-played {
+  border-color: green; /* Choisir la couleur que vous voulez pour l'état "played" */
+}

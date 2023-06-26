@@ -9,7 +9,10 @@ import PlayerZone from "../playerZone/PlayerZone";
 import BetZone from '../betZone/BetZone';
 
 // Récupération du nom du joueur passé en props de PlayerZone
-const playerName = "Jules";
+const playerNames = ["Jules", "Pierre", "Paul", "Jacques", "Sophie", "Marie", "Louise"];
+// Récupération du status du joueur passé en props de PlayerZone
+const playerStatuses = ["not-played", "not-played", "playing", "not-played", "played", "not-played", "not-played"]; // Exemple de statuts
+
 
 const Game = () => {
     return(
@@ -20,7 +23,7 @@ const Game = () => {
                     {/* <ShoeZone /> */}
                     
                     <ChipZone />
-                    { <PlayerZone playerName={playerName}/> }
+                    <PlayerZone playerNames={playerNames} playerStatuses={playerStatuses}/> 
                     <BetZone minValue={2} />
                     <RuleZone />
                 </header>

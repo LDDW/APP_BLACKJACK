@@ -1,23 +1,23 @@
 import React from 'react';
 import './PlayerZone.css';
 
-interface PlayerProps {
-  playerName: string;
+interface PlayerZoneProps {
+  playerNames: string[];
+  playerStatuses: string[];
 }
 
-const PlayerZone: React.FC<PlayerProps> = ({ playerName }) => {
-  
+const PlayerZone: React.FC<PlayerZoneProps> = ({ playerNames, playerStatuses }) => {
+
   return (
-    <div className="player-zone">
-      <h2>Player {playerName}'s Zone</h2>
-      <div className="card-area">
-        {/* Place for displaying player's cards */}
-      </div>
-      <div className="bet-area">
-        {/* Place for displaying player's bets */}
-      </div>
+    <div className="playerZone">
+      {playerNames.map((playerName, index) => (
+        <div key={index} className="rectangleContainer">
+          <div className="playerName">{playerName}</div> 
+          <div className={`rectangle rectangle-${playerStatuses[index]}`}></div>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default PlayerZone;

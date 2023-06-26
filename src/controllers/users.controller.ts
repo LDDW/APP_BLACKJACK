@@ -19,7 +19,7 @@ class UsersController {
 					.then( user => {
 						if(user.id == req.auth.userId.userId || identifiedUser.roles.includes("ROLE_ADMIN")) {
 							myDataSource.manager.remove(user)
-								.then(() => res.status(500).json({message: "Utilisateur supprimée"}))
+								.then(() => res.status(200).json({message: "Utilisateur supprimée"}))
 								.catch(error => res.status(400).json({error}))
 						}else {
 							res.status(401).json({error: "error"});

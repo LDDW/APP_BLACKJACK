@@ -14,7 +14,7 @@ const AdminEditUser = () => {
         const userData = await response.json();
         setUser(userData);
       } catch (error) {
-        console.error("Erreur lors du chargemet de l'utilisateur : ", error);
+        console.error("Erreur lors du chargement de l'utilisateur : ", error);
       }
     };
     fetchUser();
@@ -39,7 +39,7 @@ const AdminEditUser = () => {
   };
 
   if (!user) {
-    return <div>Chargemet en cours..</div>;
+    return <div>Chargement en cours..</div>;
   }
 
   return (

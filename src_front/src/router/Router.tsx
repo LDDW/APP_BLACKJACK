@@ -20,7 +20,6 @@ const Router = () => {
         <Route path="/admin/*" element={<AdminController />} />
         <Route path="/game" element={<Game />} />
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
       <Footer />
       {/* {pathname.startsWith("/admin") && <AdminRouter />} */}

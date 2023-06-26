@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
 import Swal from "sweetalert2";
+import { isSet } from "util/types";
+import { Console } from "console";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -41,7 +43,6 @@ function LoginForm() {
     login(url);
     // alert(`Email: ${email}, Password: ${password}`);
   };
-
   return (
     <form className="authForm" onSubmit={handleSubmit}>
       <div>

@@ -1,0 +1,245 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* HEADER  */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+#header{
+  background-color: #005315;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+#title-header {
+  display: flex;  
+  width: 50%;
+}
+
+
+#title-header a {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  align-items: center;
+}
+
+
+#title-header a img {
+  width: 70px;
+  height: auto;
+  margin-right: 20px;
+}
+
+#title-header a h1 {
+  color: #ED0000;
+  font-family: 'Irish Grover';
+  font-size: 2rem;
+  /* font-size: 40px; */
+}
+
+#menu-header {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#menu-header li {
+  list-style-type: none;
+}
+
+#menu-header li a i {
+  color: white;
+  /* text-decoration: none; */
+  font-size: 40px;
+}
+
+#menu-header i:hover {
+  color: yellow;
+}
+
+
+
+/* HOME */
+main {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-image: url("../../assets/Blackjack_board_flou.JPG");
+  background-size: cover;
+  flex-grow: 2;
+}
+
+.home-item {
+  border: 2px solid #005315;
+  border-radius: 15px 15px 0 15px;
+  background-color: #c0ae9c7c;
+ 
+}
+.home-games {  
+  width: 60%; 
+  
+}
+.items-games{
+  overflow: auto; 
+  height: 60vh;
+}
+.home-chat {
+  width: 35%;
+  text-align: center;
+}
+
+#title-chat {
+  color:white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  background-color: #005315;
+  border-radius: 10px 10px 0 0;
+  height: 64px;
+  padding-top: 12px;
+}
+
+.title-menu {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+}
+
+.game-item{
+  color:#005315;
+}
+
+#top-games{
+  background-color: #005315;
+  border-radius: 10px 10px 0 0;
+}
+.game-item:hover{
+  background-color: rgba(255, 255, 255, 0.548);
+  color:#005315;
+}
+
+.title-menu{
+  padding-top: 12px;
+}
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #005315;
+  padding: 10px;
+}
+
+footer a, li {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+}
+
+footer li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+footer ul {
+  margin-bottom: 0;
+}
+
+footer li:hover {
+  color: yellow;
+}
+
+footer img {
+  width: 100px;
+}
+
+@media (max-width: 575px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer ul {
+    text-align: center;
+    padding: 0;
+  }
+  
+
+
+  footer a {
+    text-align: center;
+  }
+
+  footer nav link {
+    width: 100%;
+  }
+
+}
+
+/* AUTH */
+#auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 200px; */
+  width: 50%;
+  background-color: #cabcae65;
+  border-radius: 20px;
+}
+
+.login, .signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.login h2, .signUp h2 {
+  color: white;
+}
+
+.authForm div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.authForm div label {
+    color: black;
+}
+
+.authForm button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #005315;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+.authForm button:hover {
+  color: black;
+}

@@ -1,0 +1,11 @@
+.chip-zone {
+  display: flex;
+  /* width: 300px; */
+  background-color: #00763a;
+  /* color: #fff; */
+  padding: 5px;
+}
+
+.chip-container {
+  /* Styles for displaying the chips */
+}

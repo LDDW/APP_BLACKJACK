@@ -30,8 +30,9 @@ const Footer = () => {
           </li>
         </ul>
       </nav>
-      <Link to={"/"} className="nav-link">
-        <img src={Logo} alt="logo" />
+      <Link to={"https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif"} className="nav-link" target="_blank">
+        {/* <img src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="logo" /> */}
+        <img src={Logo} alt="logo"/>
       </Link>
       <nav className="nav-droite">
         <ul>

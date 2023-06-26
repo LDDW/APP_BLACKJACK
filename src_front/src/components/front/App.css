@@ -87,13 +87,18 @@ main {
 
 .home-item {
   border: 2px solid #005315;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 15px;
   background-color: #c0ae9c7c;
+ 
 }
 .home-games {  
-  width: 60%;  
+  width: 60%; 
+  
 }
-
+.items-games{
+  overflow: auto; 
+  height: 60vh;
+}
 .home-chat {
   width: 35%;
   text-align: center;
@@ -126,7 +131,7 @@ main {
   border-radius: 10px 10px 0 0;
 }
 .game-item:hover{
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.548);
   color:#005315;
 }
 

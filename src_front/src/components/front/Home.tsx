@@ -25,6 +25,7 @@ const Home = () => {
   return (
     <main>
       <div className="home-games home-item">
+
         <div className="title-menu" id="top-games">
           <p>Parties en cours</p>
           <p>Mises</p>
@@ -33,55 +34,92 @@ const Home = () => {
 
         <GameComponent />
 
-        {/* TODO supprimer les quatre div ci-dessous lorsque la fonction GameComponent sera fonctionnel */}
-        
-        <a href="/" className="title-menu game-item" >
-          <p>6644664</p>
-          <p>20/50 €</p>
-          <p>5</p>
-        </a>
-        
-        <a href="/" className="title-menu game-item" >
-          <p>b3dev_test</p>
-          <p>2/10 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>121278</p>
-          <p>50/100 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>z3rod_56</p>
-          <p>40/60 €</p>
-          <p>6</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>6644664</p>
-          <p>20/50 €</p>
-          <p>5</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>b3dev_test</p>
-          <p>2/10 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>121278</p>
-          <p>50/100 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>z3rod_56</p>
-          <p>40/60 €</p>
-          <p>6</p>
-        </a>
+        {/* TODO supprimer les huit div ci-dessous lorsque la fonction GameComponent sera fonctionnel */}
+        <div className="items-games">
+          <a href="/" className="title-menu game-item" >
+            <p>6644664</p>
+            <p>20/50 €</p>
+            <p>5</p>
+          </a>
+
+          <a href="/" className="title-menu game-item" >
+            <p>b3dev_test</p>
+            <p>2/10 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>121278</p>
+            <p>50/100 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>z3rod_56</p>
+            <p>40/60 €</p>
+            <p>6</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>6644664</p>
+            <p>20/50 €</p>
+            <p>5</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>b3dev_test</p>
+            <p>2/10 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>121278</p>
+            <p>50/100 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>z3rod_56</p>
+            <p>40/60 €</p>
+            <p>6</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>b3dev_test</p>
+            <p>2/10 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>121278</p>
+            <p>50/100 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>121278</p>
+            <p>50/100 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>z3rod_56</p>
+            <p>40/60 €</p>
+            <p>6</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>b3dev_test</p>
+            <p>2/10 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>121278</p>
+            <p>50/100 €</p>
+            <p>7</p>
+          </a>
+          <a href="/" className="title-menu game-item" >
+            <p>z3rod_56</p>
+            <p>40/60 €</p>
+            <p>6</p>
+          </a>
+        </div>
 
       </div>
 
       <div className="home-chat home-item">
         <p id="title-chat">Chat en cours de construction</p>
       </div>
+      
     </main>
   );
 };

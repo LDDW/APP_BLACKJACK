@@ -109,9 +109,9 @@ const AdminUser = () => {
           icon: "success",
           title: "Utilisateur supprimé",
         });
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
+        login(logUrl)
+        .then((data) => fetchData(url, data.token))
+        .catch((error) => console.log(error));
       }
     });
   };

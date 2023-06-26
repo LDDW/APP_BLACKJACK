@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const AdminUser = () => {
   interface User {
@@ -11,6 +12,7 @@ const AdminUser = () => {
 
   const url = "http://localhost:3333/user";
   const logUrl = "http://localhost:3333/auth/login";
+  // const deleteUrl = `http://localhost:3333/user/${id}`;
   const body = {
     email: "arthurldh@gmail.com",
     password: "test",
@@ -60,8 +62,38 @@ const AdminUser = () => {
     }
   };
 
+  const deleteUser = async(deleteUrl: string, token: string) => {
+    try {
+      const response = await fetch(deleteUrl, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          "Une erreur est survenue lors de la récupération des données."
+        );
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const handleDelete = (id: number) => {
     // Logique de suppression d'un utilisateur
+    Swal.fire({
+      title: 'Etes-vous sûr de vouloir supprimer cet utilisateur ?',
+      showCancelButton: true,
+      confirmButtonText: 'Supprimer',
+      cancelButtonText: `Annuler`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+          login(logUrl)
+            .then((data) => deleteUser(`http://localhost:3333/user/${id}`, data.token))
+            .catch((error) => console.log(error));
+        Swal.fire('Utilisateur supprimé', '', 'success')
+      }
+    })
   };
 
   useEffect(() => {
@@ -95,7 +127,7 @@ const AdminUser = () => {
                 <td>
                   <Link
                     to={`/admin/users/edit/${user.id}`}
-                    className="btn btn-primary"
+                    className="btn btn-primary me-2"
                   >
                     Éditer
                   </Link>

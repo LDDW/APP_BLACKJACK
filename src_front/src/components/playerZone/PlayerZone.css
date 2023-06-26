@@ -2,8 +2,12 @@
   background-color: #00763a; 
   display: flex;
   justify-content: center;
-  gap: 40px; /* Augmente l'espacement entre les rectangles */
+  gap: 40px;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  padding: 3em 0;
 }
+
 
 .rectangleContainer {
   display: flex;
@@ -20,9 +24,9 @@
 .rectangle {
   width: 100px;
   height: 100px;
-  border-width: 5px; /* Rend les bordures plus épaisses */
+  border-width: 5px;
   border-style: solid;
-  margin-bottom: 10px; /* Augmente l'espacement en dessous des rectangles */
+  margin-bottom: 10px;
   border-radius: 10px;
 }
 
@@ -39,9 +43,8 @@
 }
 
 .cardValue, .empty {
-  height: 20px; /* Ajustez cette valeur pour correspondre à la hauteur de votre div cardValue */
+  height: 20px;
   margin-bottom: 5px;
   text-align: center;
   color: #fff;
 }
-

@@ -3,10 +3,12 @@ import styles from "./styles";
 import React, {SetStateAction, useRef, useState} from "react";
 import Svg, {Path} from "react-native-svg";
 import {UserProps} from "../../types/chat";
+import useSocket from "../../hooks/useSocket";
 
 const Composer = (props: { setUser: React.Dispatch<SetStateAction<UserProps[]>>, user: UserProps[] }) => {
 	const [message, setMessage] = useState('')
 	const inputRef = useRef() as React.MutableRefObject<TextInput>
+	const { handleEmit } = useSocket()
 
 	const handleSubmit = () => {
 		const currentUser = {
@@ -16,6 +18,7 @@ const Composer = (props: { setUser: React.Dispatch<SetStateAction<UserProps[]>>,
 			avatar: 'https://i.pravatar.cc/300?img='+17,
 			message: message
 		}
+		handleEmit('save', currentUser)
 		props.setUser((prevState) => [currentUser, ...prevState ])
 		inputRef.current && inputRef.current.clear()
 	}

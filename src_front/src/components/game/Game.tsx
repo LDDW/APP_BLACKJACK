@@ -16,7 +16,8 @@ const players = [
 const playerNames = ["The-Jules6666", "Pierre", "Paul", "Jacques", "Sophie", "Marie", "Louise"];
 // Récupération du status du joueur passé en props de PlayerZone
 const playerStatuses = ["not-played", "not-played", "playing", "not-played", "played", "not-played", "not-played"]; // Exemple de statuts
-
+// Récupération des valeurs des cartes
+const cardValues = [10, 20, 15, 0, 18, 0, 0];
 
 const Game = () => {
     return(
@@ -26,7 +27,7 @@ const Game = () => {
                     <DiscardPileZone />
 
                     <ChipZone players={players}/>
-                    <PlayerZone playerNames={playerNames} playerStatuses={playerStatuses}/>
+                    <PlayerZone playerNames={playerNames} playerStatuses={playerStatuses} cardValues={cardValues}/>
                     <BetZone minValue={2} />
                     <RuleZone />
                 </header>

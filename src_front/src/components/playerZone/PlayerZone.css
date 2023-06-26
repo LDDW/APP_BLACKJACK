@@ -37,3 +37,11 @@
 .rectangle-played {
   border-color: green;
 }
+
+.cardValue, .empty {
+  height: 20px; /* Ajustez cette valeur pour correspondre à la hauteur de votre div cardValue */
+  margin-bottom: 5px;
+  text-align: center;
+  color: #fff;
+}
+

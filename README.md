@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # APP_BLACKJACK
 
 ## ExpressJS
@@ -97,4 +96,8 @@ npm run dev:rest
 ## License
 =======
 # APP_BLACKJACK
->>>>>>> Stashed changes
+
+=======
+## Règle d'écriture : 
+
+  -> Il conviendra de coder en anglais (exception faite pour les commentaires)

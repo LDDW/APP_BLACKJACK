@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;">
-      <change afterPath="$PROJECT_DIR$/mobile/src/navigator/stack.navigator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" afterDir="false" />
+    <list default="true" id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="Add Navigator">
+      <change afterPath="$PROJECT_DIR$/mobile/datas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/config/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/hooks/useSocket.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/screens/chat/Composer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/screens/chat/Message.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/screens/chat/styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/services/socket.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/types/chat.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/navigator/stack.navigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/navigator/stack.navigator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,15 +29,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="node_front" />
         <entry key="$PROJECT_DIR$" value="react_mobile" />
       </map>
     </option>
@@ -42,22 +50,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "react__mobile",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "ts.external.directory.path": "/Users/Nicolas/Apps/MyDigitalSchool/NEW_BLACKJACK/mobile/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;react__mobile&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/NEW_BLACKJACK/mobile&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/Nicolas/Apps/MyDigitalSchool/NEW_BLACKJACK/mobile/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mobile" />
+      <recent name="$PROJECT_DIR$/mobile/src/hooks" />
+      <recent name="$PROJECT_DIR$/mobile/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1686924390614</updated>
       <workItem from="1686924392829" duration="2859000" />
-      <workItem from="1687762108161" duration="2699000" />
+      <workItem from="1687762108161" duration="9802000" />
+      <workItem from="1687777677773" duration="2734000" />
     </task>
     <task id="LOCAL-00001" summary="Add FetchRequest : Communication serveur front React">
       <created>1686926863969</created>
@@ -83,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687763079053</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Navigator">
+      <created>1687765069834</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687765069834</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +146,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Add FetchRequest : Communication serveur front React" />
     <MESSAGE value="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add js-cookie. Oubliez pas de faire &quot;npm install&quot;" />
+    <MESSAGE value="Add Navigator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Navigator" />
   </component>
 </project>

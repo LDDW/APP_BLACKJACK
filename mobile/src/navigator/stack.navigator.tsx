@@ -28,7 +28,7 @@ const StackNavigator = () => {
 	return (
 		<Stack.Navigator>
 			<Stack.Group>
-				<Stack.Screen name="Chat" component={ChatScreen}/>
+				<Stack.Screen name="Chat" options={{headerShown: false}} component={ChatScreen}/>
 			</Stack.Group>
 		</Stack.Navigator>
 	)

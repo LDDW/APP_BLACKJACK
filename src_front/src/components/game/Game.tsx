@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Game.css';
 
 import DealerZone from '../dealerZone/DealerZone';
 import DiscardPileZone from '../discardPileZone/DiscardPileZone';
-import ChipZone from "../chipZone/ChipZone";
 import RuleZone from "../ruleZone/RuleZone";
 import PlayerZone from "../playerZone/PlayerZone";
 import BetZone from '../betZone/BetZone';
@@ -15,23 +14,47 @@ const playerStatuses = ["not-played", "not-played", "not-played", "playing", "pl
 // Récupération des valeurs des cartes
 const cardValues = [10, 20, 15, 0, 18, 16, 20];
 
-
 const Game = () => {
+    const [betValue, setBetValue] = useState(0);
+    const [chip, setChip] = useState<{
+        chipred: number,
+        chipblue: number,
+        chipgreen: number
+    }>({
+        chipred: 0,
+        chipblue: 0,
+        chipgreen: 0,
+    });
+
+
     return (
         <div className="App">
             <header className="App-header">
-                <DealerZone />
-                <DiscardPileZone />
-                <PlayerZone playerNames={playerNames} playerStatuses={playerStatuses} cardValues={cardValues} />
-                <div className='BetZone'>
-                    <BetZone minValue={2}/>
-                    <ChatBox messages={["Message 1", "Message 2", "Message 3", "Message 4"]} />
+                <div className="elements">
+                    <DealerZone/>
+                    <DiscardPileZone/>
+                    <PlayerZone
+                        chip={chip}
+                        playerNames={playerNames}
+                        playerStatuses={playerStatuses}
+                        cardValues={cardValues}
+                    />
                 </div>
-                <RuleZone />
-
+                <div className='BetZone'>
+                    <BetZone
+                        minValue={2}
+                        betValue={betValue}
+                        chip={chip}
+                        setBetValue={setBetValue}
+                        setChip={setChip}
+                    />
+                    <ChatBox messages={["Message 1", "Message 2", "Message 3", "Message 4"]}/>
+                </div>
+                <RuleZone/>
             </header>
         </div>
-    )
-}
+    );
+};
+
 
 export default Game;

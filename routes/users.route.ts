@@ -69,4 +69,12 @@ usersRouter.get('/', (req, res, next) => AuthMiddleware.verify(req, res, next), 
         .catch(error => res.status(500).json({error}));
 });
 
+/**
+ * Get a user
+ * @returns {Promise<User>}
+ */
+usersRouter.get('/token', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+    UsersController.checkRole(req, res, next);
+});
+
 export default usersRouter;

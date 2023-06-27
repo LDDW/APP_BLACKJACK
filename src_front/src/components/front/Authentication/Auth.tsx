@@ -7,6 +7,10 @@ import Footer from "../Footer";
 import LoginForm from "./LoginForm";import SignupForm from "./SignUpForm";
 
 const Auth = () => {
+  if(localStorage.getItem('token')){
+    window.location.replace("/")
+    return (<div></div>)
+  }
   return ( <>
     <Header />
     <main>

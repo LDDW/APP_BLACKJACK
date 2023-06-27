@@ -32,8 +32,6 @@ const Router = () => {
         ></Route>
         <Route path="/add" element={<RSL />} />
       </Routes>
-
-      {/* {pathname.startsWith("/admin") && <AdminRouter />} */}
     </>
   );
 };

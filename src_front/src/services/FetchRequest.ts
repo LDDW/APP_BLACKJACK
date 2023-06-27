@@ -41,11 +41,7 @@ const FetchRequest = async (
 			...datas
 		})
 
-		if (req.ok) {
-			return await req.json()
-		} else {
-			console.log(req.status)
-		}
+		return await req.json()
 	} catch (err) {
 		if (err instanceof Error) {
 			console.log(err.message)

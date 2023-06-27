@@ -1,5 +1,5 @@
 import { ServerOptions } from 'socket.io';
 
 export const socketConfig = {
-	path: ''
+	path: '/ws'
 } as ServerOptions

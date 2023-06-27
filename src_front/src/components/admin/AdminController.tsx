@@ -22,6 +22,7 @@ const AdminController = () => {
           navigate("/auth");
         } else {
           setRoleChecked(true);
+          console.log(response)
         }
       } catch (error) {
         console.log(error);

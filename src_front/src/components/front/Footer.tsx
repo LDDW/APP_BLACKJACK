@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './App.css';
-import Logo from '../../assets/logoSite.png';
+import connectedUser from "./Authentication/ConnectedUser";
+import "./App.css";
+import Logo from "../../assets/logoSite.png";
 
 const Footer = () => {
+  interface User {
+    id: number;
+    email: string;
+    username: string;
+    roles: string[];
+  }
+
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (localStorage.getItem("token")) {
+        const userData = await connectedUser();
+        setUser(userData.user);
+      }
+    };
+
+    fetchUser();
+  }, []);
   return (
     <footer>
       <nav className="nav-gauche">
@@ -40,11 +60,19 @@ const Footer = () => {
               CGU
             </Link>
           </li>
-          <li>
-            <Link to={"/mon-compte"} className="nav-link">
-              Mon compte
-            </Link>
-          </li>
+          {!user ? (
+            <li>
+              <Link to={"/auth"} className="nav-link">
+                S'inscrire
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to={"/mon-compte"} className="nav-link">
+                Mon compte
+              </Link>
+            </li>
+          )}
           <li>
             <Link to={"/faq"} className="nav-link">
               FAQ

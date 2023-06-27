@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
 /* HEADER  */
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
 
-#header{
+#header {
   background-color: #005315;
 }
 
@@ -25,10 +25,9 @@ body {
 }
 
 #title-header {
-  display: flex;  
+  display: flex;
   width: 50%;
 }
-
 
 #title-header a {
   display: flex;
@@ -37,7 +36,6 @@ body {
   align-items: center;
 }
 
-
 #title-header a img {
   width: 70px;
   height: auto;
@@ -45,8 +43,8 @@ body {
 }
 
 #title-header a h1 {
-  color: #ED0000;
-  font-family: 'Irish Grover';
+  color: #ed0000;
+  font-family: "Irish Grover";
   font-size: 2rem;
   /* font-size: 40px; */
 }
@@ -60,6 +58,12 @@ body {
 
 #menu-header li {
   list-style-type: none;
+  padding: 20px;
+}
+
+#menu-header li p {
+  margin: 0;
+  text-transform: capitalize;
 }
 
 #menu-header li a i {
@@ -71,8 +75,6 @@ body {
 #menu-header i:hover {
   color: yellow;
 }
-
-
 
 /* HOME */
 main {
@@ -90,8 +92,8 @@ main {
   border-radius: 15px;
   background-color: #c0ae9c7c;
 }
-.home-games {  
-  width: 60%;  
+.home-games {
+  width: 60%;
 }
 
 .home-chat {
@@ -100,8 +102,8 @@ main {
 }
 
 #title-chat {
-  color:white;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.5rem;
   background-color: #005315;
   border-radius: 10px 10px 0 0;
@@ -113,27 +115,26 @@ main {
   display: flex;
   justify-content: space-around;
   color: white;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.5rem;
 }
 
-.game-item{
-  color:#005315;
+.game-item {
+  color: #005315;
 }
 
-#top-games{
+#top-games {
   background-color: #005315;
   border-radius: 10px 10px 0 0;
 }
-.game-item:hover{
+.game-item:hover {
   background-color: white;
-  color:#005315;
+  color: #005315;
 }
 
-.title-menu{
+.title-menu {
   padding-top: 12px;
 }
-
 
 /* FOOTER */
 footer {
@@ -145,7 +146,8 @@ footer {
   padding: 10px;
 }
 
-footer a, li {
+footer a,
+li {
   text-decoration: none;
   color: rgb(255, 255, 255);
   list-style-type: none;
@@ -178,8 +180,6 @@ footer img {
     text-align: center;
     padding: 0;
   }
-  
-
 
   footer a {
     text-align: center;
@@ -188,7 +188,6 @@ footer img {
   footer nav link {
     width: 100%;
   }
-
 }
 
 /* AUTH */
@@ -202,14 +201,16 @@ footer img {
   border-radius: 20px;
 }
 
-.login, .signUp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
+.login,
+.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
-.login h2, .signUp h2 {
+.login h2,
+.signUp h2 {
   color: white;
 }
 
@@ -220,7 +221,7 @@ footer img {
 }
 
 .authForm div label {
-    color: black;
+  color: black;
 }
 
 .authForm button {

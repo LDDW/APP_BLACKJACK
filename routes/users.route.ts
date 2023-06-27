@@ -8,11 +8,27 @@ import {myDataSource} from "../data-source";
 import {User} from "../src/entities/user.entity";
 
 /**
+ * Check if the user is admin
+ * @returns {JSON} //If error code = 200, means the user is an admin
+ */
+usersRouter.get('/token', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+    UsersController.checkRole(req, res, next);
+});
+
+/**
+ * Get user informations from his token
+ * @returns {Promise<User>}
+ */
+usersRouter.get('/connected', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+    UsersController.getConnectedUser(req, res, next);
+});
+
+/**
  * Get a user
  * @param {number} id
  * @returns {Promise<User>}
  */
-usersRouter.get('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+usersRouter.get('/:id(/d)', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
     if (!req.params.id) {
         return res.send("Error: missing parameters").status(400);
     } else if (!Number(req.params.id)) {
@@ -26,7 +42,7 @@ usersRouter.get('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next
  * @param {number} id
  * @returns {Promise<User>}
  */
-usersRouter.delete('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+usersRouter.delete('/:id(/d)', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
     if (!req.params.id) {
         return res.send("Error: missing parameters").status(400);
     } else if (!Number(req.params.id)) {
@@ -40,7 +56,7 @@ usersRouter.delete('/:id', (req, res, next) => AuthMiddleware.verify(req, res, n
  * @param {number} id
  * @returns {Promise<User>}
  */
-usersRouter.put('/:id', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
+usersRouter.put('/:id(/d)', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
 
     if(req.params.id && req.body.username && req.body.email){
         UsersController.update(req, res, next)
@@ -69,12 +85,5 @@ usersRouter.get('/', (req, res, next) => AuthMiddleware.verify(req, res, next), 
         .catch(error => res.status(500).json({error}));
 });
 
-/**
- * Get a user
- * @returns {Promise<User>}
- */
-usersRouter.get('/token', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
-    UsersController.checkRole(req, res, next);
-});
 
 export default usersRouter;

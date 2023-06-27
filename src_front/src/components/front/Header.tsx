@@ -7,8 +7,14 @@ import LogoutButton from "./Authentication/Logout";
 import connectedUser from "./Authentication/ConnectedUser";
 
 const Header = () => {
+  interface User {
+    id: number;
+    email: string;
+    username: string;
+    roles: string[];
+  }
 
-  const [user, setUser] = useState({ roles: [] });
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -19,7 +25,7 @@ const Header = () => {
     fetchUser();
   }, []);
 
-  console.log(user.roles)
+  console.log(user);
 
   return (
     <nav id="header">
@@ -43,7 +49,7 @@ const Header = () => {
               <LogoutButton />
             </li>
           )}
-          {user && user.roles && (
+          {user && user.roles.includes("ROLE_ADMIN") && (
             <li>
               <Link to={"/admin"} className="nav-link">
                 Admin
@@ -57,3 +63,4 @@ const Header = () => {
 };
 
 export default Header;
+

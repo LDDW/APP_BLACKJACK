@@ -10,7 +10,7 @@ import ChooseName from "../components/chat/ChooseName";
 import ChooseRoom from "../components/chat/ChooseRoom";
 import ChatPage from "../components/chat/ChatPage";
 import RSL from "../components/RSL/RSL";
-const socket = io("http://10.71.130.180:3333");
+const socket = io("http://10.71.134.212:3333");
 
 const Router = () => {
   const location = useLocation();
@@ -23,6 +23,7 @@ const Router = () => {
         <Route path="/auth" element={<Auth />} />
         <Route path="/admin/*" element={<AdminController />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/chat" element={<ChooseName socket={socket} />}></Route>
         <Route path="/chat/talk" element={<ChatPage socket={socket} />}></Route>
         <Route

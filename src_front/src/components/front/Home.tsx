@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 
 function GameComponent() {
@@ -7,7 +6,7 @@ function GameComponent() {
 
   for (let i = 0; i < game.length; i++) {
     game.push(
-      <a href="/" className="title-menu" >
+      <a href="/" className="title-menu">
         {/* TODO récupérer l'id ou le nom de la partie */}
         <p>6644664</p>
         {/* récupérer les mises de la partie */}
@@ -34,49 +33,48 @@ const Home = () => {
         <GameComponent />
 
         {/* TODO supprimer les quatre div ci-dessous lorsque la fonction GameComponent sera fonctionnel */}
-        
-        <a href="/" className="title-menu game-item" >
+
+        <a href="/" className="title-menu game-item">
           <p>6644664</p>
           <p>20/50 €</p>
           <p>5</p>
-        </a>
-        
-        <a href="/" className="title-menu game-item" >
-          <p>b3dev_test</p>
-          <p>2/10 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>121278</p>
-          <p>50/100 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>z3rod_56</p>
-          <p>40/60 €</p>
-          <p>6</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>6644664</p>
-          <p>20/50 €</p>
-          <p>5</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>b3dev_test</p>
-          <p>2/10 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>121278</p>
-          <p>50/100 €</p>
-          <p>7</p>
-        </a>
-        <a href="/" className="title-menu game-item" >
-          <p>z3rod_56</p>
-          <p>40/60 €</p>
-          <p>6</p>
         </a>
 
+        <a href="/" className="title-menu game-item">
+          <p>b3dev_test</p>
+          <p>2/10 €</p>
+          <p>7</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>121278</p>
+          <p>50/100 €</p>
+          <p>7</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>z3rod_56</p>
+          <p>40/60 €</p>
+          <p>6</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>6644664</p>
+          <p>20/50 €</p>
+          <p>5</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>b3dev_test</p>
+          <p>2/10 €</p>
+          <p>7</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>121278</p>
+          <p>50/100 €</p>
+          <p>7</p>
+        </a>
+        <a href="/" className="title-menu game-item">
+          <p>z3rod_56</p>
+          <p>40/60 €</p>
+          <p>6</p>
+        </a>
       </div>
 
       <div className="home-chat home-item">

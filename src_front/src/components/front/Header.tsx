@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
-import Logo from '../../assets/logoSite.png';
+import Logo from "../../assets/logoSite.png";
+import LogoutButton from "./Authentication/Logout";
 import connectedUser from "./Authentication/ConnectedUser";
 
 const Header = () => {
@@ -24,16 +26,25 @@ const Header = () => {
           </Link>
         </div>
         <ul id="menu-header">
-          <li>
-            <Link to={"/auth"} className="nav-link">
-              <i className="fa-regular fa-user"></i>
-            </Link>
-          </li>
-          {/* <li>
-            <Link to={"/admin"} className="nav-link">
-              Admin
-            </Link>
-          </li> */}
+          {!isAuthenticated && (
+            <li>
+              <Link to={"/auth"} className="nav-link">
+                <i className="fa-regular fa-user"></i>
+              </Link>
+            </li>
+          )}
+          {roleChecked && userRole === "ROLE_ADMIN" && (
+            <li>
+              <Link to={"/admin"} className="nav-link">
+                Admin
+              </Link>
+            </li>
+          )}
+          {isAuthenticated && (
+            <li>
+              <LogoutButton />
+            </li>
+          )}
         </ul>
       </div>
     </nav>

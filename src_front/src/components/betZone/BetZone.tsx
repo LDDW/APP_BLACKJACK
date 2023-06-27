@@ -58,7 +58,7 @@ const BetZone: React.FC<BetZoneProps> = ({ minValue, betValue, setBetValue, setC
                 <input
                     type="text"
                     id="euro-input"
-                    value={betValue + ' €'}
+                    value={betValue}
                     className="BetInput"
                     readOnly
                 />

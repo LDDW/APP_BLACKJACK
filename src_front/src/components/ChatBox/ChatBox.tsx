@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import './ChatBox.css';
 
-interface ChipProps {
-    minValue: number;
+interface ChatBoxMessages {
+    messages: string[];
 }
 
-const ChatBox = () => {
-
+const ChatBox: React.FC<ChatBoxMessages> = ({ messages }) => {
     return (
 
         <div className="ChatBox">
+            <div className="MessagesContainer">
+                {messages.map((message, index) => (
+                    <p key={index} className="message">{message}</p>
+                ))}
+            </div>
             <div className="InputContainer">
                 <input
                     type="text"
@@ -20,6 +24,7 @@ const ChatBox = () => {
                 <button className="SendButton">Envoyer</button>
             </div>
         </div>
+
 
     );
 };

@@ -1,19 +1,6 @@
-.BetZone{
-    display: flex;
-    justify-content: space-between;
-}
-
-.BetArea{
-    flex: 8;
-}
-
-.ChatArea{
-    flex: 2;
-}
 
 .BetArea {
-    width: 100%;
-    height: 100px;
+    width: 70%;
     background-color: #C4AF9A;
     justify-content: center;
     display: flex;

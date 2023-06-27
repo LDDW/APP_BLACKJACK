@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './BetZone.css';
-import ChatBox from '../ChatBox/ChatBox';
 interface ChipProps {
     minValue: number;
 }
 
 const BetZone: React.FC<ChipProps> = ({ minValue }) => {
     const [betValue, setBetValue] = useState(minValue);
+
 
     const handleIncrement = () => {
         setBetValue(prevValue => betValue + 1);
@@ -18,8 +18,8 @@ const BetZone: React.FC<ChipProps> = ({ minValue }) => {
         }
     };
 
+
     return (
-        <div className='BetZone'>
             <div className="BetArea">
                 <div className='ButtonArea'>
                     <button className='StopButton'>STOP</button>
@@ -29,7 +29,7 @@ const BetZone: React.FC<ChipProps> = ({ minValue }) => {
                     <input
                         type="text"
                         id="euro-input"
-                        value={betValue+' €'}
+                        value={betValue + ' €'}
                         className="BetInput"
                         readOnly
                     />
@@ -40,8 +40,6 @@ const BetZone: React.FC<ChipProps> = ({ minValue }) => {
                 </div>
 
             </div>
-            <div className='ChatArea'><ChatBox /></div>
-        </div>
     );
 };
 

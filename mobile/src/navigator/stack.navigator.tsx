@@ -7,6 +7,7 @@ import ChatScreen from '../screens/chat/chat.screen';
 import ImagesScreen from '../screens/images/images.screen';
 import HomeScreen from '../screens/home/home.screen';
 import {Header} from '../screens/Layout/navbar.screen';
+
 /**
  * Navigateur React Native
  * Voir la doc : https://reactnavigation.org/docs/native-stack-navigator
@@ -35,6 +36,7 @@ const Stack = createNativeStackNavigator<IRootParamsList>();
 const customNavBar = {
   header: (props: NativeStackHeaderProps) => <Header {...props} />,
 };
+
 
 const StackNavigator = () => {
   return (

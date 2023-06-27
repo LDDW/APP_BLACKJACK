@@ -1,6 +1,12 @@
-import {createNativeStackNavigator, NativeStackScreenProps} from "@react-navigation/native-stack";
-import ChatScreen from "../screens/chat/chat.screen";
-import ImagesScreen from "../screens/images/images.screen";
+import {
+  createNativeStackNavigator,
+  NativeStackHeaderProps,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
+import ChatScreen from '../screens/chat/chat.screen';
+import ImagesScreen from '../screens/images/images.screen';
+import HomeScreen from '../screens/home/home.screen';
+import {Header} from '../screens/Layout/navbar.screen';
 /**
  * Navigateur React Native
  * Voir la doc : https://reactnavigation.org/docs/native-stack-navigator
@@ -18,23 +24,42 @@ import ImagesScreen from "../screens/images/images.screen";
  */
 
 type IRootParamsList = {
-	// Ajouter ici le nom des screens
-	Chat: undefined
-	Images: undefined
-}
+  // Ajouter ici le nom des screens
+  Chat: undefined;
+  Home: undefined;
+  Images: undefined;
+};
 
 const Stack = createNativeStackNavigator<IRootParamsList>();
 
-const StackNavigator = () => {
-	return (
-		<Stack.Navigator>
-			<Stack.Group>
-				<Stack.Screen name="Images" component={ImagesScreen}/>
-				<Stack.Screen name="Chat" component={ChatScreen}/>
-			</Stack.Group>
-		</Stack.Navigator>
-	)
-}
+const customNavBar = {
+  header: (props: NativeStackHeaderProps) => <Header {...props} />,
+};
 
-export default StackNavigator
-export type IRootStackProps<T extends keyof IRootParamsList> = NativeStackScreenProps<IRootParamsList, T>;
+const StackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Group>
+        <Stack.Screen
+          name="Home"
+          options={customNavBar}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="Images"
+          options={customNavBar}
+          component={ImagesScreen}
+        />
+        <Stack.Screen
+          name="Chat"
+          options={customNavBar}
+          component={ChatScreen}
+        />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+};
+
+export default StackNavigator;
+export type IRootStackProps<T extends keyof IRootParamsList> =
+  NativeStackScreenProps<IRootParamsList, T>;

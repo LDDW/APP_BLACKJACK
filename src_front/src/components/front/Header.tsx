@@ -36,17 +36,21 @@ const Header = () => {
           </Link>
         </div>
         <ul id="menu-header">
-          {!user && (
+          {!user ? (
             <li>
               <Link to={"/auth"} className="nav-link">
                 <i className="fa-regular fa-user"></i>
               </Link>
             </li>
-          )}
-          {user && (
+          ) : (
             <>
               <li>
-                <p>{user.username}</p>
+                <p>
+                  Bienvenue
+                  <Link to={"/mon-compte"} className="nav-link">
+                    {user.username}
+                  </Link>
+                </p>
               </li>
               <li>
                 <LogoutButton />

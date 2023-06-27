@@ -10,6 +10,8 @@ const LogoutButton = () => {
 
     // Redirection de l'utilisateur vers la page d'accueil
     navigate("/");
+
+    window.location.reload();
   };
 
   return <button onClick={handleLogout}>Déconnexion</button>;

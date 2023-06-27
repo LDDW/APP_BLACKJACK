@@ -6,7 +6,7 @@ const LogoutButton = () => {
 
   const handleLogout = () => {
     // Suppression du token dans le localStorage
-    localStorage.removeItem("token");
+    localStorage.clear();
 
     // Redirection de l'utilisateur vers la page d'accueil
     navigate("/");

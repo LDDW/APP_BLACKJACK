@@ -85,12 +85,11 @@ class UsersController {
 
 	public getConnectedUser(req, res, next) {
 		const UserRepository = myDataSource.getRepository(User);
-		return res.status(201).json(req);
-		// UserRepository.findOneBy({id : req.auth.userId.userId})
-		// 	.then(identifiedUser => {
-		// 		return res.status(201).json({user: identifiedUser});
-		// 	})
-		// 	.catch(error => res.status(500).json({ error }));
+		UserRepository.findOneBy({id : req.auth.userId.userId})
+			.then(identifiedUser => {
+				return res.status(201).json({user: identifiedUser});
+			})
+			.catch(error => res.status(500).json({ error }));
 	}
 
 	public checkRole(req, res, next) {
@@ -98,9 +97,9 @@ class UsersController {
 		UserRepository.findOneBy({id : req.auth.userId.userId})
 			.then(identifiedUser => {
 				if(identifiedUser.roles.includes("ROLE_ADMIN")){
-					res.status(200).json('ok ma gueule')
+					return res.status(200).json('ok ma gueule')
 				}
-				res.status(401).json('pas ok ma gueule')
+				return res.status(401).json('pas ok ma gueule')
 			})
 			.catch(error => res.status(401).json({error}))
 	}

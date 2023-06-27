@@ -37,14 +37,14 @@ import "./src/services/socket/main";
 /**
  * Initialisation de la connexion à la base de données
  */
-/*
+
 myDataSource.initialize().then(() => {
 	console.log("Connection to database established")
 })
 	.catch((err) => {
 		console.log("Connection to database failed", err)
 	});
-*/
+
 /**
  * Déclaration des routes avec préfix
  */

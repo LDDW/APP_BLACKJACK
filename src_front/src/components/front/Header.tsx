@@ -8,13 +8,18 @@ import connectedUser from "./Authentication/ConnectedUser";
 
 const Header = () => {
 
-  const [user, setUser] = useState(null);
-  const userData = connectedUser();
-  userData
-    .then((response) => {
-      setUser(response);
-    })
-    .catch((error) => { console.log(error) })
+  const [user, setUser] = useState({ roles: [] });
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const userData = await connectedUser();
+      setUser(userData.user);
+    };
+
+    fetchUser();
+  }, []);
+
+  console.log(user.roles)
 
   return (
     <nav id="header">
@@ -26,23 +31,23 @@ const Header = () => {
           </Link>
         </div>
         <ul id="menu-header">
-          {!isAuthenticated && (
+          {!user && (
             <li>
               <Link to={"/auth"} className="nav-link">
                 <i className="fa-regular fa-user"></i>
               </Link>
             </li>
           )}
-          {roleChecked && userRole === "ROLE_ADMIN" && (
+          {user && (
+            <li>
+              <LogoutButton />
+            </li>
+          )}
+          {user && user.roles && (
             <li>
               <Link to={"/admin"} className="nav-link">
                 Admin
               </Link>
-            </li>
-          )}
-          {isAuthenticated && (
-            <li>
-              <LogoutButton />
             </li>
           )}
         </ul>

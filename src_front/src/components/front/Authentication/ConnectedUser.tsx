@@ -13,7 +13,7 @@ const connectedUser = async () => {
             );
           }
 
-        //   console.log(response)
+          console.log(response)
 
           return await response.json();
     

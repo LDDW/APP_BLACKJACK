@@ -39,15 +39,11 @@ function SignupForm() {
         }
 
         const data = await response.json();
-        //enregistrer en session data.token
-        localStorage.setItem('token', data.token);
-        window.location.reload();
       } catch (error) {
         console.log(error);
       }
     };
     signUp(url);
-    alert(`Email: ${email}, Password: ${password}, Username: ${username}, Avatar: ${avatar}`);
   };
 
   const handleFileChange = (e: any) => {

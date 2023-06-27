@@ -37,13 +37,14 @@ import "./src/services/socket/main";
 /**
  * Initialisation de la connexion à la base de données
  */
+/*
 myDataSource.initialize().then(() => {
 	console.log("Connection to database established")
 })
 	.catch((err) => {
 		console.log("Connection to database failed", err)
 	});
-
+*/
 /**
  * Déclaration des routes avec préfix
  */
@@ -53,6 +54,8 @@ app.use('/auth', authRouter);
 app.use('/game', gameRouter);
 // app.use('/channel', channelRouter);
 // app.use('/message', messageRouter);
+
+
 
 httpRestServer.listen(portRestServer, () => {
 	console.log('listener on http://127.0.0.1:'+portRestServer);

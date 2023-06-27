@@ -10,7 +10,9 @@ import ChooseName from "../components/chat/ChooseName";
 import ChooseRoom from "../components/chat/ChooseRoom";
 import ChatPage from "../components/chat/ChatPage";
 import RSL from "../components/RSL/RSL";
-const socket = io("http://10.71.134.212:3333");
+const socket = io("http://localhost:3333", {
+  path: "/ws",
+});
 
 const Router = () => {
   const location = useLocation();

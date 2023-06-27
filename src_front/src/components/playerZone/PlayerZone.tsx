@@ -56,7 +56,7 @@ const PlayerZone: React.FC<PlayerZoneProps> = ({
                     <div
                         className={`cardValue ${playerStatuses[index] !== 'played' ? 'empty' : ''}`}>{playerStatuses[index] === 'played' ? cardValues[index] : ''}</div>
                     <div className={`rectangle rectangle-${playerStatuses[index]}`}></div>
-                    {playerName === 'The-Jules6666' && (
+                    {playerName === 'Pierre' && (
                         <div className="chip-overlay">
                             {
                                 chip.chipgreen && chip.chipgreen >= 2 || chip.chipgreen && chip.chipgreen < 11 ?

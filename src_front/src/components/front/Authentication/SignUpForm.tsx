@@ -31,11 +31,7 @@ function SignupForm() {
             text: 'Veuillez remplir les champs obligatoire',
           })
         } else{
-          Swal.fire({
-            icon: 'success',
-            title: 'Votre compte a été créé',
-            text: 'Merci de vous connecter',
-          })
+          login("http://localhost:3333/auth/login")
         }
 
         const data = await response.json();
@@ -44,6 +40,31 @@ function SignupForm() {
       }
     };
     signUp(url);
+
+    const login = async (url: string) => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+  
+        if (!response.ok) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'L\'adresse email ou votre mot de passe est incorrect.',
+          })
+        }
+  
+        const data = await response.json();
+        //enregistrer en session data.token
+        localStorage.setItem('token', data.token);
+        window.location.reload();
+      } catch (error) {
+        console.log(error);
+      }
+    };
   };
 
   const handleFileChange = (e: any) => {

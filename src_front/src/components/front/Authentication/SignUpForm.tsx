@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import Swal from "sweetalert2";
 
 function SignupForm() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,43 @@ function SignupForm() {
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    // TODO: validate and submit the email, password, username and avatar
+    const body = {
+      email: `${email}`,
+      password: `${password}`,
+      username: `${username}`,
+    };
+    const url = "http://localhost:3333/auth/signup";
+    const signUp = async (url: string) => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+
+        if (!response.ok) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Veuillez remplir les champs obligatoire',
+          })
+        } else{
+          Swal.fire({
+            icon: 'success',
+            title: 'Votre compte a été créé',
+            text: 'Merci de vous connecter',
+          })
+        }
+
+        const data = await response.json();
+        //enregistrer en session data.token
+        localStorage.setItem('token', data.token);
+        window.location.reload();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    signUp(url);
     alert(`Email: ${email}, Password: ${password}, Username: ${username}, Avatar: ${avatar}`);
   };
 
@@ -59,8 +96,8 @@ function SignupForm() {
           type="file"
           id="avatar"
           accept="image/*"
-          onChange= {(e) => handleFileChange(e)}
-        
+          onChange={(e) => handleFileChange(e)}
+
         />
       </div>
       <button type="submit">S'inscrire</button>

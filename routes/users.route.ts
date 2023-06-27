@@ -70,8 +70,17 @@ usersRouter.get('/', (req, res, next) => AuthMiddleware.verify(req, res, next), 
 });
 
 /**
- * Get a user
+ * Get user informations from his token
  * @returns {Promise<User>}
+ */
+usersRouter.get('/connected'), (req, res, next) => AuthMiddleware.verify(req, res, next), async(req, res, next) => {
+    return res.status(200).json("hello")
+    // UsersController.getAuthUser(req, res, next);
+}
+
+/**
+ * Check if the user is admin
+ * @returns {JSON} //If error code = 200, means the user is an admin
  */
 usersRouter.get('/token', (req, res, next) => AuthMiddleware.verify(req, res, next), async (req, res, next) => {
     UsersController.checkRole(req, res, next);

@@ -1,0 +1,22 @@
+.ChatBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100px;
+    width: 100%;
+    background-color: #D9D9D9;
+}
+
+.InputContainer{
+    display: flex;
+    width: 100%;
+}
+
+.ChatInput{
+    width: 80%;
+    flex: 8;
+}
+.SendButton{
+    width: 20%;
+    flex: 2;
+}

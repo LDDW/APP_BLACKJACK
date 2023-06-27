@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
 	},
 	box: {
 		padding: 10,
-		flex: 9
+		flex: 1
+		//flex: 9
 	},
 	message: {
 		flex: 1,
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
 	},
 	composer: {
 		backgroundColor: '#208127',
-		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		padding: 10,

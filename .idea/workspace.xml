@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="Update Chatbox">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="5fbc1c8a-a78a-4b65-9856-27624e81bb99" name="Changes" comment="Fix FetchRequest.ts">
+      <change afterPath="$PROJECT_DIR$/mobile/src/hooks/useRotation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/screens/chat/chat.screen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/screens/chat/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/screens/chat/styles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +65,38 @@
       <recent name="$PROJECT_DIR$/mobile/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.android">
+    <configuration name="android (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="android (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start (3)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/mobile/package.json" />
       <command value="run" />
       <scripts>
@@ -83,8 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.android (2)" />
+        <item itemvalue="npm.start (3)" />
+        <item itemvalue="npm.android (1)" />
+        <item itemvalue="npm.android" />
       </list>
     </recent_temporary>
   </component>
@@ -99,6 +137,9 @@
       <workItem from="1686924392829" duration="2859000" />
       <workItem from="1687762108161" duration="9802000" />
       <workItem from="1687777677773" duration="5653000" />
+      <workItem from="1687783466835" duration="2363000" />
+      <workItem from="1687849851185" duration="2273000" />
+      <workItem from="1687852206823" duration="3773000" />
     </task>
     <task id="LOCAL-00001" summary="Add FetchRequest : Communication serveur front React">
       <created>1686926863969</created>
@@ -149,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687783359325</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update Chatbox">
+      <created>1687783486104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687783486104</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix FetchRequest.ts">
+      <created>1687786739815</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687786739815</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +218,7 @@
     <MESSAGE value="Add Navigator" />
     <MESSAGE value="Add Chatbox" />
     <MESSAGE value="Update Chatbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Chatbox" />
+    <MESSAGE value="Fix FetchRequest.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix FetchRequest.ts" />
   </component>
 </project>

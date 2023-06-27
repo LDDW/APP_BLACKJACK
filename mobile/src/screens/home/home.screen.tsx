@@ -24,6 +24,12 @@ const HomeScreen: React.FC<IRootStackProps<'Home'>> = ({navigation}) => {
         onPress={() => navigation.navigate('Chat')}>
         <Text style={styles.cardTitle}>Acceder au chat</Text>
       </Pressable>
+
+      <Pressable
+        style={styles.card}
+        onPress={() => navigation.navigate('Images')}>
+        <Text style={styles.cardTitle}>Images</Text>
+      </Pressable>
     </Layout>
   );
 };

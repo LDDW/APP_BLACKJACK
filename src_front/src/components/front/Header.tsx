@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
 import Logo from "../../assets/logoSite.png";
@@ -18,14 +17,14 @@ const Header = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await connectedUser();
-      setUser(userData.user);
+      if (localStorage.getItem("token")) {
+        const userData = await connectedUser();
+        setUser(userData.user);
+      }
     };
 
     fetchUser();
   }, []);
-
-  console.log(user);
 
   return (
     <nav id="header">
@@ -45,9 +44,14 @@ const Header = () => {
             </li>
           )}
           {user && (
-            <li>
-              <LogoutButton />
-            </li>
+            <>
+              <li>
+                <p>{user.username}</p>
+              </li>
+              <li>
+                <LogoutButton />
+              </li>
+            </>
           )}
           {user && user.roles.includes("ROLE_ADMIN") && (
             <li>
@@ -63,4 +67,3 @@ const Header = () => {
 };
 
 export default Header;
-
